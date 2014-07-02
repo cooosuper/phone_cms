@@ -61,7 +61,7 @@ public class Register extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(register_username.getText().toString().trim().length()<4){
-            Toast.makeText(Register.this, "ÓÃ»§Ãû²»ÄÜÐ¡ÓÚ4¸ö×Ö·û", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½4ï¿½ï¿½ï¿½Ö·ï¿½", Toast.LENGTH_SHORT).show();
           }
         }
       }
@@ -76,7 +76,7 @@ public class Register extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(register_passwd.getText().toString().trim().length()<6){
-            Toast.makeText(Register.this, "ÃÜÂë²»ÄÜÐ¡ÓÚ8¸ö×Ö·û", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Ð¡ï¿½ï¿½8ï¿½ï¿½ï¿½Ö·ï¿½", Toast.LENGTH_SHORT).show();
           }
         }
       }
@@ -91,7 +91,7 @@ public class Register extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(!reregister_passwd.getText().toString().trim().equals(register_passwd.getText().toString().trim())){
-            Toast.makeText(Register.this, "Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ", Toast.LENGTH_SHORT).show(); 
+            Toast.makeText(Register.this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½ï¿½", Toast.LENGTH_SHORT).show(); 
           }
         }
       }
@@ -149,6 +149,7 @@ public class Register extends Activity
           Toast.makeText(Register.this, strResult, Toast.LENGTH_SHORT).show();
           
           Intent intent = new Intent();
+          intent.putExtra("testIntent", "register_successed");
           intent.setClass(Register.this, MainActivity.class);
           Register.this.startActivity(intent);
           
@@ -157,7 +158,7 @@ public class Register extends Activity
         }
         else
         {
-          Toast.makeText(Register.this, "ÇëÇó´íÎó", Toast.LENGTH_SHORT).show();
+          Toast.makeText(Register.this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
         }
         
       }
@@ -169,11 +170,11 @@ public class Register extends Activity
   
   private boolean checkEdit(){
     if(register_username.getText().toString().trim().equals("")){
-      Toast.makeText(Register.this, "ÓÃ»§Ãû²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Register.this, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else if(register_passwd.getText().toString().trim().equals("")){
-      Toast.makeText(Register.this, "ÃÜÂë²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Register.this, "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else if(!register_passwd.getText().toString().trim().equals(reregister_passwd.getText().toString().trim())){
-      Toast.makeText(Register.this, "Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Register.this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else{
       return true;
     }

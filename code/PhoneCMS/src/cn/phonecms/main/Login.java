@@ -59,19 +59,20 @@ public class Login extends Activity
       return;
     }
     Intent intent = new Intent();
+    intent.putExtra("testIntent", "login_successed");
     intent.setClass(Login.this, MainActivity.class);
     Login.this.startActivity(intent);
   }
   
   private boolean checkEdit(){
     if(login_username.getText().toString().trim().equals("")){
-      Toast.makeText(Login.this, "ÓÃ»§Ãû²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Login.this, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else if(login_passwd.getText().toString().trim().equals("")){
-      Toast.makeText(Login.this, "ÃÜÂë²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Login.this, "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else if(!login_username.getText().toString().trim().equals("123")){
-      Toast.makeText(Login.this, "ÓÃ»§Ãû²»ÕýÈ·£¬ÇëÖØÐÂÊäÈë", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Login.this, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }else if(!login_passwd.getText().toString().trim().equals("123")){
-      Toast.makeText(Login.this, "ÃÜÂë²»ÕýÈ·£¬ÇëÖØÐÂÊäÈë", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Login.this, "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
     }    
     else{
       return true;

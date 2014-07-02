@@ -13,19 +13,10 @@
         android:textSize="8pt"
         android:text="@string/cancel" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="130dip"
-        android:layout_marginTop="30dip"
-       
-        android:src="@drawable/samsung" />
-
   <RelativeLayout 
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
-		android:layout_marginTop="20dip">
+		android:layout_marginTop="60dip">
 	
 	    <EditText
 	        android:id="@+id/editText1"
