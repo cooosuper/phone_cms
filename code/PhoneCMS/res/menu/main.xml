@@ -1,8 +1,49 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<?xml version="1.0" encoding="utf-8"?>
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:title="Play" android:id="@+id/media_play" 
+
+  android:icon="@android:drawable/ic_media_play"/>
+
+<item android:title="Pause" android:id="@+id/media_pause" 
+
+  android:icon="@android:drawable/ic_media_pause"/>
+
+<item android:title="File" android:id="@+id/file">
+
+<menu>
+
+<item android:title="Open..." android:id="@+id/file_open"/>
+
+<item android:title="Save" android:id="@+id/file_save"/>
+
+<item android:title="Save as" android:id="@+id/file_saveas"/>
+
+<item android:title="Exit" android:id="@+id/file_exit"/>
+
+</menu>
+
+</item>
+
+<item android:title="Edit" android:id="@+id/edit">
+
+<menu>
+
+<group>
+
+<item android:title="Copy" android:id="@+id/edit_copy"/>
+
+<item android:title="Paste" android:id="@+id/edit_paste"/>
+
+<item android:title="Cut" android:id="@+id/edit_cut"/>
+
+<item android:title="Delete" android:id="@+id/edit_delete"/>
+
+</group>
+
+</menu>
+
+</item>
 
 </menu>

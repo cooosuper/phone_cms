@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#404040"
     android:orientation="vertical" >
 
 	<RelativeLayout
@@ -14,6 +15,7 @@
 	        style="?android:attr/buttonStyleSmall"
 	        android:layout_width="80dp"
 	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
 	        android:text="返回" />
 	
 	    <TextView
@@ -23,6 +25,7 @@
 	        android:layout_marginLeft="130dp"
 	        android:layout_marginTop="10dp"
 	        android:textSize="10pt"
+	        android:textColor="#FFFFFF"
 	        android:text="注册" />
     </RelativeLayout>
 	<RelativeLayout 
@@ -37,6 +40,7 @@
 	        android:layout_centerVertical="true"
 	        android:layout_marginLeft="29dp"
 	        android:text="用户名"
+	        android:textColor="#FFFFFF"
 	        android:textSize="7pt" />
 
 	    <EditText
@@ -44,7 +48,7 @@
 	        android:layout_width="180dp"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentTop="true"
-	        android:layout_marginLeft="22dp"
+	        android:layout_marginLeft="20dp"
 	        android:layout_toRightOf="@+id/textView2"
 	        android:ems="10"
 	        android:inputType="textPersonName" />
@@ -70,6 +74,8 @@
 	        android:layout_alignBottom="@+id/editText2"
 	        android:layout_alignParentLeft="true"
 	        android:layout_marginLeft="35dp"
+	        android:textColor="#FFFFFF"
+	        android:textSize="7pt"
 	        android:text="密码" />
 
     </RelativeLayout>
@@ -92,7 +98,9 @@
 	        android:layout_alignBaseline="@+id/editText2_1"
 	        android:layout_alignBottom="@+id/editText2_1"
 	        android:layout_alignParentLeft="true"
-	        android:layout_marginLeft="35dp"
+	        android:layout_marginLeft="17dp"
+	        android:textColor="#FFFFFF"
+	        android:textSize="7pt"
 	        android:text="确认密码" />
 
     </RelativeLayout>
@@ -102,7 +110,7 @@
 
 	    <EditText
 	        android:id="@+id/editText3"
-	        android:layout_width="178dp"
+	        android:layout_width="180dp"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentRight="true"
 	        android:layout_alignParentTop="true"
@@ -116,8 +124,10 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignBaseline="@+id/editText3"
 	        android:layout_alignBottom="@+id/editText3"
-	        android:layout_marginRight="22dp"
+	        android:layout_marginRight="18dp"
 	        android:layout_toLeftOf="@+id/editText3"
+	        android:textColor="#FFFFFF"
+	        android:textSize="7pt"
 	        android:text="电话号码" />
 
     </RelativeLayout>
@@ -144,8 +154,10 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignBaseline="@+id/editText4"
 	        android:layout_alignBottom="@+id/editText4"
-	        android:layout_marginRight="22dp"
+	        android:layout_marginRight="19dp"
 	        android:layout_toLeftOf="@+id/editText4"
+	        android:textColor="#FFFFFF"
+	        android:textSize="7pt"
 	        android:text="邮箱地址" />
 
     </RelativeLayout>
@@ -155,11 +167,11 @@
 
 	    <EditText
 	        android:id="@+id/editText5"
-	        android:layout_width="173dp"
+	        android:layout_width="180dp"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentRight="true"
 	        android:layout_alignParentTop="true"
-	        android:layout_marginRight="43dp"
+	        android:layout_marginRight="40dp"
 	        android:ems="10"
 	        android:inputType="textPostalAddress" />
 
@@ -169,8 +181,10 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignBaseline="@+id/editText5"
 	        android:layout_alignBottom="@+id/editText5"
-	        android:layout_marginRight="19dp"
+	        android:layout_marginRight="18dp"
 	        android:layout_toLeftOf="@+id/editText5"
+	        android:textColor="#FFFFFF"
+	        android:textSize="7pt"
 	        android:text="通讯地址" />
 
 	</RelativeLayout>
@@ -178,12 +192,16 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="7pt"
         android:text="已阅读并同意" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="306dp"
+        android:layout_width="269dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
         android:text="注册" />
 
 </LinearLayout>

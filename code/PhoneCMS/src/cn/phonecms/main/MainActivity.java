@@ -12,6 +12,10 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.view.Menu;  
+import android.view.MenuItem;  
+
+
 
 /**
  * 程序主入口
@@ -72,4 +76,35 @@ public class MainActivity extends Activity {
     getMenuInflater().inflate(R.menu.main, menu);
     return true;
   }
+  
+  public boolean onOptionsItemSelected(MenuItem item) 
+  {
+
+    super.onOptionsItemSelected(item);
+
+    switch (item.getItemId()) 
+    {
+
+      case R.id.media_play:                        
+  
+      break;
+  
+      case R.id.media_pause:                        
+  
+      break;
+  
+      case R.id.file_open:                        
+  
+      break;
+  
+      case R.id.file_save:
+  
+      break;
+
+    }
+
+    return true;
+
+    }
+
 }

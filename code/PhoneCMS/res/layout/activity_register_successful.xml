@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="#404040"
     android:padding="30dip" >
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_weight="0.01"
         android:layout_marginLeft="60dp"
         android:textSize="10pt" 
+        android:textColor="#FFFFFF"
         android:text="注册成功！！" />
 
     <TextView
@@ -22,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/main_intro"
-        android:textSize="7pt" />
+        android:textColor="#FFFFFF"
+        android:textSize="9pt" />
 
     <RelativeLayout
         android:layout_width="fill_parent"

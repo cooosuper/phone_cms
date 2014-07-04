@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#404040"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -20,9 +21,10 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="10dp"
             android:text="申请成为商家"
+            android:textColor="#FFFFFF"
             android:textSize="10pt" />
     </RelativeLayout>
 
@@ -36,14 +38,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="29dp"
             android:text="公司名"
+            android:textColor="#FFFFFF"
             android:textSize="7pt" />
 
         <EditText
             android:id="@+id/editText1"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="22dp"
             android:layout_toRightOf="@+id/textView2"
@@ -63,15 +68,17 @@
             android:layout_alignBottom="@+id/editText4"
             android:layout_marginRight="22dp"
             android:layout_toLeftOf="@+id/editText4"
-            android:text="邮箱地址" />
+            android:text="邮箱地址"
+            android:textSize="7pt"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/editText4"
-            android:layout_width="175dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="42dp"
+            android:layout_marginRight="38dp"
             android:ems="10"
             android:inputType="textEmailAddress" >
         </EditText>
@@ -81,12 +88,15 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="已阅读并同意" />
+        android:layout_marginLeft="15dp"
+        android:text="已阅读并同意"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="306dp"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:text="注册" />
 
 </LinearLayout>

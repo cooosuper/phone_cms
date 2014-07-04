@@ -5,6 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="#404040"
     android:padding="10dip" >
 
     <Button
@@ -32,6 +33,7 @@
            android:layout_toLeftOf="@+id/register_company"
            android:layout_weight="0.01"
            android:text="登录成功！"
+           android:textColor="#FFFFFF"
            android:textSize="10pt" />
     
     </RelativeLayout>
@@ -41,7 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:textSize="7pt" 
+        android:textSize="10pt" 
+        android:textColor="#FFFFFF"
         android:text="@string/main_intro" />
 
     
