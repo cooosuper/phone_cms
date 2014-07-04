@@ -25,18 +25,19 @@ public class Login extends Activity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
    
-    login_username = (EditText)findViewById(R.id.editText1);
-    login_passwd   = (EditText)findViewById(R.id.editText2);
+    login_username = (EditText)findViewById(R.id.app_login_edit_name);
+    login_passwd   = (EditText)findViewById(R.id.app_login_edit_pass);
     
     OnClickListener mOnClickListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
           switch (v.getId()) {
-              case R.id.app_register_btn_submit : 
-                  doTaskRegister();
-                  break;
+//              case R.id.app_register_btn_submit : 
+//                  doTaskRegister();
+//                  break;
               case R.id.app_login_btn_submit :
                   doTaskLogin();
+                  break;
           }
       }
     };
@@ -46,12 +47,12 @@ public class Login extends Activity
     
   }
   
-  private void doTaskRegister() 
-  {
-    Intent intent = new Intent();
-    intent.setClass(Login.this, Register.class);
-    Login.this.startActivity(intent);
-  }
+//  private void doTaskRegister() 
+//  {
+//    Intent intent = new Intent();
+//    intent.setClass(Login.this, Register.class);
+//    Login.this.startActivity(intent);
+//  }
   
   private void doTaskLogin()
   {
