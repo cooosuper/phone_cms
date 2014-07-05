@@ -19,7 +19,7 @@ import android.view.MenuItem;
  * 程序主入口
  * 
  */
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -69,11 +69,9 @@ public class MainActivity extends Activity {
     intent.setClass(MainActivity.this, Login.class);
     MainActivity.this.startActivity(intent);
   }
-
-  @Override
+  
   public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.main, menu);
-
     return true;
   }
   
@@ -85,25 +83,40 @@ public class MainActivity extends Activity {
     switch (item.getItemId()) 
     {
 
-      case R.id.media_play:                        
+      case R.id.company:                             
+//        forward(Login.class);
+        break;
   
-      break;
+      case R.id.product:                           
+//        forward(Login.class);
+        break;
   
-      case R.id.media_pause:                        
-  
-      break;
-  
-      case R.id.file_open:                        
-  
-      break;
-  
-      case R.id.file_save:
-  
-      break;
+      case R.id.activity:                          
+//        forward(Login.class);
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, Activities_mng.class);
+        MainActivity.this.startActivity(intent);
+        break;
+      
+      case R.id.more:
+//        forward(Login.class);
+        break;
+      
+      case R.id.comment:
+//        forward(Login.class);
+        break;
+       
+      case R.id.recruit:
+//        forward(Login.class);
+        break;
+        
+      case R.id.sub_company:
+//        forward(Login.class); 
+        break;
 
     }
-
-    return true;
+    
+    return super.onOptionsItemSelected(item);
 
     }
 
