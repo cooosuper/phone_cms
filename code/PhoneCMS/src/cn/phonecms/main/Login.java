@@ -42,7 +42,7 @@ public class Login extends Activity
       }
     };
     
-    findViewById(R.id.app_register_btn_submit).setOnClickListener(mOnClickListener);
+//    findViewById(R.id.app_register_btn_submit).setOnClickListener(mOnClickListener);
     findViewById(R.id.app_login_btn_submit).setOnClickListener(mOnClickListener);
     
   }
@@ -67,7 +67,7 @@ public class Login extends Activity
   
   private boolean checkEdit(){
     if(login_username.getText().toString().trim().equals("")){
-      Toast.makeText(Login.this, "�û�����Ϊ��", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Login.this, "�û�����Ϊ�choKong gai guolai ", Toast.LENGTH_SHORT).show();
     }else if(login_passwd.getText().toString().trim().equals("")){
       Toast.makeText(Login.this, "���벻��Ϊ��", Toast.LENGTH_SHORT).show();
     }else if(!login_username.getText().toString().trim().equals("123")){

@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity {
     if (value != null && value.equals("register_successed")) {
       setContentView(R.layout.activity_register_successful);
     }else if(value != null && value.equals("login_successed")){
+      //if you use this branch, this layout has not login btn
       setContentView(R.layout.activity_login_successful);
     } else{
       setContentView(R.layout.activity_main);
@@ -52,9 +53,8 @@ public class MainActivity extends BaseActivity {
 //    Button appRegisterBtnSubmit = (Button) findViewById(R.id.app_register_btn_submit);
 //    Button appLoginBtnLogin = (Button)findViewById(R.id.login);
     // 这里，你通过findViewById获取一个Button控件，但是你没有加载布局，所以获取控件为空
-    findViewById(R.id.app_register_btn_submit).setOnClickListener(
-        mOnClickListener);
-    findViewById(R.id.login).setOnClickListener(mOnClickListener);
+    findViewById(R.id.app_register_btn_submit).setOnClickListener(mOnClickListener);
+    findViewById(R.id.login).setOnClickListener(mOnClickListener);// here you still use login btn .so  the error happened
 
   }
 
