@@ -1,18 +1,11 @@
 package cn.phonecms.main;
 
-import java.util.HashMap;
-
-//import com.app.demos.R;
-//import com.app.demos.base.C;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.view.Menu;  
 import android.view.MenuItem;  
 
 /**
@@ -21,52 +14,41 @@ import android.view.MenuItem;
  */
 public class MainActivity extends BaseActivity {
   
+  private Button appRegisterBtnSubmit;
+  private Button appLoginBtnLogin;
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    Intent intent = getIntent();
-    String value = intent.getStringExtra("testIntent");
-
-    // 这个地方的比较永远进不去，字符串比较不能用==，要用equals
-    if (value != null && value.equals("register_successed")) {
-      setContentView(R.layout.activity_register_successful);
-    }else if(value != null && value.equals("login_successed")){
-      //if you use this branch, this layout has not login btn
-      setContentView(R.layout.activity_login_successful);
-    } else{
+    
       setContentView(R.layout.activity_main);
-    }
 
-    OnClickListener mOnClickListener = new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        switch (v.getId()) {
-        case R.id.app_register_btn_submit:
-          doTaskRegister();
-          break;
-        case R.id.login:
-          goLoginPage();
-        }
+    appRegisterBtnSubmit = (Button)findViewById(R.id.app_register_btn_submit);
+    appLoginBtnLogin = (Button)findViewById(R.id.app_login_btn_navigate);
+    
+    appRegisterBtnSubmit.setOnClickListener(new OnClickListener() { 
+      public void onClick(View v) { 
+        doTaskRegister();
       }
-    };
-//    Button appRegisterBtnSubmit = (Button) findViewById(R.id.app_register_btn_submit);
-//    Button appLoginBtnLogin = (Button)findViewById(R.id.login);
-    // 这里，你通过findViewById获取一个Button控件，但是你没有加载布局，所以获取控件为空
-    findViewById(R.id.app_register_btn_submit).setOnClickListener(mOnClickListener);
-    findViewById(R.id.login).setOnClickListener(mOnClickListener);// here you still use login btn .so  the error happened
+    });
+    
+    appLoginBtnLogin.setOnClickListener(new OnClickListener() { 
+      public void onClick(View v) { 
+        goLoginPage();
+      }
+    });
 
   }
 
   private void doTaskRegister() {
     Intent intent = new Intent();
-    intent.setClass(MainActivity.this, Register.class);
+    intent.setClass(MainActivity.this, RegisterAccount.class);
     MainActivity.this.startActivity(intent);
   }
 
   private void goLoginPage() {
     Intent intent = new Intent();
-    intent.setClass(MainActivity.this, Login.class);
+    intent.setClass(MainActivity.this, LoginActivity.class);
     MainActivity.this.startActivity(intent);
   }
   
@@ -94,7 +76,7 @@ public class MainActivity extends BaseActivity {
       case R.id.activity:                          
 //        forward(Login.class);
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, Activities_mng.class);
+        intent.setClass(MainActivity.this, ManageActivity.class);
         MainActivity.this.startActivity(intent);
         break;
       
