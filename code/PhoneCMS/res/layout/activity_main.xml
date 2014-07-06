@@ -24,7 +24,7 @@
         android:layout_marginTop="290dip" >
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/app_login_btn_navigate"
             android:layout_width="100dip"
             android:layout_height="40dip"
             android:layout_marginLeft="160dip"
