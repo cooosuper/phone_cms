@@ -24,7 +24,7 @@ public class MainActivity extends BaseActivity {
       setContentView(R.layout.activity_main);
 
     appRegisterBtnSubmit = (Button)findViewById(R.id.app_register_btn_submit);
-    appLoginBtnLogin = (Button)findViewById(R.id.app_login_btn_navigate);
+    appLoginBtnLogin     = (Button)findViewById(R.id.app_login_btn_navigate);
     
     appRegisterBtnSubmit.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
@@ -51,55 +51,4 @@ public class MainActivity extends BaseActivity {
     intent.setClass(MainActivity.this, LoginActivity.class);
     MainActivity.this.startActivity(intent);
   }
-  
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.main, menu);
-    return true;
-  }
-  
-  public boolean onOptionsItemSelected(MenuItem item) 
-  {
-
-    super.onOptionsItemSelected(item);
-
-    switch (item.getItemId()) 
-    {
-
-      case R.id.company:                             
-//        forward(Login.class);
-        break;
-  
-      case R.id.product:                           
-//        forward(Login.class);
-        break;
-  
-      case R.id.activity:                          
-//        forward(Login.class);
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, ManageActivity.class);
-        MainActivity.this.startActivity(intent);
-        break;
-      
-      case R.id.more:
-//        forward(Login.class);
-        break;
-      
-      case R.id.comment:
-//        forward(Login.class);
-        break;
-       
-      case R.id.recruit:
-//        forward(Login.class);
-        break;
-        
-      case R.id.sub_company:
-//        forward(Login.class); 
-        break;
-
-    }
-    
-    return super.onOptionsItemSelected(item);
-
-    }
-
 }
