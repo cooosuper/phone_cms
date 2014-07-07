@@ -17,16 +17,17 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
 	        android:text="返回" />
-	
+
 	    <TextView
 	        android:id="@+id/register_user"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="130dp"
-	        android:layout_marginTop="10dp"
-	        android:textSize="10pt"
+	        android:layout_alignBottom="@+id/back_Btn"
+	        android:layout_centerHorizontal="true"
+	        android:text="注册"
 	        android:textColor="#FFFFFF"
-	        android:text="注册" />
+	        android:textSize="10pt" />
+
     </RelativeLayout>
 	<RelativeLayout 
 			android:layout_width="fill_parent" 
