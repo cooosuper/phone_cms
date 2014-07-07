@@ -99,7 +99,7 @@ public class RegisterAccountActivity extends Activity
       
     });
     
-    back_Btn.setOnClickListener(new OnClickListener(){
+    backBtn.setOnClickListener(new OnClickListener(){
       
 
       @Override
