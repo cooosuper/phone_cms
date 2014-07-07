@@ -36,7 +36,7 @@ public class LoginSuccessActivity extends Activity {
   
   private void doTaskRegisterCompany() {
     Intent intent = new Intent();
-    intent.setClass(LoginSuccessActivity.this, RegisterCompany.class);
+    intent.setClass(LoginSuccessActivity.this, RegisterCompanyActivity.class);
     LoginSuccessActivity.this.startActivity(intent);
   }
   

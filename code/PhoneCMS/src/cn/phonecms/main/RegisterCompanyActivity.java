@@ -26,7 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterCompany extends Activity {
+public class RegisterCompanyActivity extends Activity {
   
   private Button backBtn;
   private Button registerBtnComapny;
@@ -91,17 +91,17 @@ public class RegisterCompany extends Activity {
             // TODO Auto-generated catch block
             e.printStackTrace();
           }
-          Toast.makeText(RegisterCompany.this, strResult, Toast.LENGTH_SHORT).show();
+          Toast.makeText(RegisterCompanyActivity.this, strResult, Toast.LENGTH_SHORT).show();
           
           Intent intent = new Intent();
           intent.putExtra("testIntent", "register_successed");
 //          intent.setClass(RegisterCompany.this, RegisterCompanySuccess.class);
-          RegisterCompany.this.startActivity(intent);
+          RegisterCompanyActivity.this.startActivity(intent);
 //                 
         }
         else
         {
-          Toast.makeText(RegisterCompany.this, "注册失败", Toast.LENGTH_SHORT).show();
+          Toast.makeText(RegisterCompanyActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
         }
         
       }

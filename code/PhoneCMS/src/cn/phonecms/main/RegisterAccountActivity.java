@@ -29,7 +29,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class RegisterAccount extends Activity 
+public class RegisterAccountActivity extends Activity 
 {
   private EditText registerUsername; 
   private EditText registerPasswd;
@@ -60,7 +60,7 @@ public class RegisterAccount extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(registerUsername.getText().toString().trim().length()<4){
-            Toast.makeText(RegisterAccount.this, "用户名长度不能小于四个字符", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterAccountActivity.this, "用户名长度不能小于四个字符", Toast.LENGTH_SHORT).show();
           }
         }
       }
@@ -75,7 +75,7 @@ public class RegisterAccount extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(registerPasswd.getText().toString().trim().length()<6){
-            Toast.makeText(RegisterAccount.this, "密码长度不能小于6个字符", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterAccountActivity.this, "密码长度不能小于6个字符", Toast.LENGTH_SHORT).show();
           }
         }
       }
@@ -90,7 +90,7 @@ public class RegisterAccount extends Activity
         // TODO Auto-generated method stub
         if(!hasFocus){
           if(!reregisterPasswd.getText().toString().trim().equals(registerPasswd.getText().toString().trim())){
-            Toast.makeText(RegisterAccount.this, "两次输入的密码不一样", Toast.LENGTH_SHORT).show(); 
+            Toast.makeText(RegisterAccountActivity.this, "两次输入的密码不一样", Toast.LENGTH_SHORT).show(); 
           }
         }
       }
@@ -145,19 +145,19 @@ public class RegisterAccount extends Activity
             // TODO Auto-generated catch block
             e.printStackTrace();
           }
-          Toast.makeText(RegisterAccount.this, strResult, Toast.LENGTH_SHORT).show();
+          Toast.makeText(RegisterAccountActivity.this, strResult, Toast.LENGTH_SHORT).show();
           
           Intent intent = new Intent();
           intent.putExtra("testIntent", "register_successed");
 //          intent.setClass(RegisterAccount.this, RegisterAccountSuccess.class);
-          RegisterAccount.this.startActivity(intent);
+          RegisterAccountActivity.this.startActivity(intent);
           
           
           
         }
         else
         {
-          Toast.makeText(RegisterAccount.this, "注册失败", Toast.LENGTH_SHORT).show();
+          Toast.makeText(RegisterAccountActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
         }
         
       }
@@ -169,11 +169,11 @@ public class RegisterAccount extends Activity
   
   private boolean checkEdit(){
     if(registerUsername.getText().toString().trim().equals("")){
-      Toast.makeText(RegisterAccount.this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+      Toast.makeText(RegisterAccountActivity.this, "用户名不能为空", Toast.LENGTH_SHORT).show();
     }else if(registerPasswd.getText().toString().trim().equals("")){
-      Toast.makeText(RegisterAccount.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+      Toast.makeText(RegisterAccountActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
     }else if(!registerPasswd.getText().toString().trim().equals(reregisterPasswd.getText().toString().trim())){
-      Toast.makeText(RegisterAccount.this, "两次输入的密码不一致", Toast.LENGTH_SHORT).show();
+      Toast.makeText(RegisterAccountActivity.this, "两次输入的密码不一致", Toast.LENGTH_SHORT).show();
     }else{
       return true;
     }

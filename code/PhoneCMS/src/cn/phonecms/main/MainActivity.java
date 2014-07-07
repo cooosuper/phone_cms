@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity {
 
   private void doTaskRegister() {
     Intent intent = new Intent();
-    intent.setClass(MainActivity.this, RegisterAccount.class);
+    intent.setClass(MainActivity.this, RegisterAccountActivity.class);
     MainActivity.this.startActivity(intent);
   }
 

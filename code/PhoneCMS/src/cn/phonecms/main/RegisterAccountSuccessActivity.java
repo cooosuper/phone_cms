@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class RegisterAccountSuccess extends Activity {
+public class RegisterAccountSuccessActivity extends Activity {
 
   private Button app_btn_goLogin;
   
@@ -28,7 +28,7 @@ public class RegisterAccountSuccess extends Activity {
   
   private void goLoginPage() {
     Intent intent = new Intent();
-    intent.setClass(RegisterAccountSuccess.this, LoginActivity.class);
-    RegisterAccountSuccess.this.startActivity(intent);
+    intent.setClass(RegisterAccountSuccessActivity.this, LoginActivity.class);
+    RegisterAccountSuccessActivity.this.startActivity(intent);
   }
 }
