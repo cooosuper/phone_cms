@@ -40,10 +40,10 @@ public class LoginActivity extends Activity
   {
     if(!checkEdit()){
       return;
-    }
+    } 
     Intent intent = new Intent();
     intent.putExtra("testIntent", "login_successed");
-    intent.setClass(LoginActivity.this, MainActivity.class);
+    intent.setClass(LoginActivity.this, LoginSuccessActivity.class);
     LoginActivity.this.startActivity(intent);
   }
   
