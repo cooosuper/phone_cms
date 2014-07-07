@@ -95,9 +95,8 @@ public class RegisterCompanyActivity extends Activity {
           
           Intent intent = new Intent();
           intent.putExtra("testIntent", "register_successed");
-//          intent.setClass(RegisterCompany.this, RegisterCompanySuccess.class);
-          RegisterCompanyActivity.this.startActivity(intent);
-//                 
+          intent.setClass(RegisterCompanyActivity.this, RegisterCompanySuccessActivity.class);
+          RegisterCompanyActivity.this.startActivity(intent);               
         }
         else
         {

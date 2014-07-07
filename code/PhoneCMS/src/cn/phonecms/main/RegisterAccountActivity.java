@@ -38,6 +38,7 @@ public class RegisterAccountActivity extends Activity
   private EditText registerMail;
   private EditText registerAddress;
   private Button   registerSubmit;
+  private Button   backBtn;
 
   
   protected void onCreate(Bundle savedInstanceState) 
@@ -52,6 +53,7 @@ public class RegisterAccountActivity extends Activity
     registerMail     = (EditText)findViewById(R.id.app_edit_email);
     registerAddress  = (EditText)findViewById(R.id.app_edit_address);
     registerSubmit   = (Button)findViewById(R.id.app_btn_register_submit);
+    backBtn          = (Button)findViewById(R.id.back_Btn);
     registerUsername.setOnFocusChangeListener(new OnFocusChangeListener()
     {
 
@@ -95,6 +97,16 @@ public class RegisterAccountActivity extends Activity
         }
       }
       
+    });
+    
+    back_Btn.setOnClickListener(new OnClickListener(){
+      
+
+      @Override
+      public void onClick(View arg0) {
+        // TODO Auto-generated method stub
+        finish();
+      }
     });
 
     registerSubmit.setOnClickListener(new OnClickListener(){
@@ -149,7 +161,7 @@ public class RegisterAccountActivity extends Activity
           
           Intent intent = new Intent();
           intent.putExtra("testIntent", "register_successed");
-//          intent.setClass(RegisterAccount.this, RegisterAccountSuccess.class);
+          intent.setClass(RegisterAccountActivity.this, RegisterAccountSuccessActivity.class);
           RegisterAccountActivity.this.startActivity(intent);
           
           
