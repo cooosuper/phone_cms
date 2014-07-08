@@ -53,7 +53,7 @@ public class RegisterAccountActivity extends Activity
     registerMail     = (EditText)findViewById(R.id.app_edit_email);
     registerAddress  = (EditText)findViewById(R.id.app_edit_address);
     registerSubmit   = (Button)findViewById(R.id.app_btn_register_submit);
-    backBtn          = (Button)findViewById(R.id.back_Btn);
+    backBtn          = (Button)findViewById(R.id.backBtn);
     registerUsername.setOnFocusChangeListener(new OnFocusChangeListener()
     {
 
