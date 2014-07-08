@@ -15,20 +15,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignBottom="@+id/textView1"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginLeft="19dp"
             android:background="@drawable/back_btn_1" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button2"
-            android:layout_centerHorizontal="true"
-            android:text="活动管理"
-            android:textColor="#000000"
-            android:textSize="10pt" />
 
         <Button
             android:id="@+id/add_btn_activity"
@@ -38,6 +28,16 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="14dp"
             android:background="@drawable/plus_btn_1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="活动管理"
+            android:textColor="#000000"
+            android:textSize="10pt" />
 
     </RelativeLayout>
 	    
