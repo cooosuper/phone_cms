@@ -27,26 +27,30 @@
             android:name="cn.phonecms.main.LoginActivity"
             android:label="@string/app_name" >
         </activity>
-        
         <activity
-            android:name="cn.phonecms.main.RegisterAccountActivity"
-            android:label="@string/app_name" >
-        </activity>
-        
-         <activity
             android:name="cn.phonecms.main.LoginSuccessActivity"
             android:label="@string/app_name" >
         </activity>
         
         <activity
-            android:name="cn.phonecms.main.RegisterCompanyActivity"
+            android:name="cn.phonecms.main.RegisterAccountActivity"
             android:label="@string/app_name" >
         </activity>
-        
+        <activity
+            android:name="cn.phonecms.main.RegisterAccountSuccessActivity"
+            android:label="@string/app_name" >
+        </activity>
+               
+        <activity
+            android:name="cn.phonecms.main.RegisterCompanyActivity"
+            android:label="@string/app_name" >
+        </activity>    
         <activity
             android:name="cn.phonecms.main.RegisterCompanySuccessActivity"
             android:label="@string/app_name" >
         </activity>
+
+        
 
     </application>
 
