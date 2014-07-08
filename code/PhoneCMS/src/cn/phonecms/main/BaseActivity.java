@@ -35,31 +35,31 @@ public class BaseActivity extends Activity {
     {
 
       case R.id.company:                             
-        forward(LoginActivity.class);
+//        forward(LoginActivity.class);
         break;
   
       case R.id.product:                           
-        forward(LoginActivity.class);
+//        forward(LoginActivity.class);
         break;
   
       case R.id.activity:                          
-        forward(LoginActivity.class);
+        forward(ManageActivity.class);
         break;
       
       case R.id.more:
-        forward(LoginActivity.class);
+//        forward(LoginActivity.class);
         break;
       
       case R.id.comment:
-        forward(LoginActivity.class);
+//        forward(LoginActivity.class);
         break;
        
       case R.id.recruit:
-        forward(LoginActivity.class);
+//        forward(LoginActivity.class);
         break;
         
       case R.id.sub_company:
-        forward(LoginActivity.class); 
+//        forward(LoginActivity.class); 
         break;
 
     }
