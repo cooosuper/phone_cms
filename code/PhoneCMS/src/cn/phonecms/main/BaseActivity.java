@@ -5,8 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.view.View;
+
 
 public class BaseActivity extends Activity {
+  
+  private Button bTabCompany;
+  private Button bTabProduct;
+  private Button bTabActivity;
+  private Button bTabMore;
+  
   
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -67,6 +77,38 @@ public class BaseActivity extends Activity {
     return super.onOptionsItemSelected(item);
 
     }
+  
+  public void bindMainTab () {
+    bTabCompany  = (Button) findViewById(R.id.main_tab_company);
+    bTabProduct  = (Button) findViewById(R.id.main_tab_product);
+    bTabActivity = (Button) findViewById(R.id.main_tab_activity);
+    bTabMore     = (Button) findViewById(R.id.main_tab_more);
+    if (bTabCompany != null && bTabProduct != null && bTabActivity != null) {
+      OnClickListener mOnClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          switch (v.getId()) {
+            case R.id.main_tab_company:
+              forward(LoginActivity.class);
+              break;
+            case R.id.main_tab_product:
+              forward(LoginActivity.class);
+              break;
+            case R.id.main_tab_activity:
+              forward(ManageActivity.class);
+              break;
+            case R.id.main_tab_more:
+              bindMainTab();
+              break;
+          }
+        }
+      };
+      bTabCompany.setOnClickListener(mOnClickListener);
+      bTabProduct.setOnClickListener(mOnClickListener);
+      bTabActivity.setOnClickListener(mOnClickListener);
+      bTabMore.setOnClickListener(mOnClickListener);
+    }
+  }
   
   
 }
