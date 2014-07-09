@@ -40,18 +40,14 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/main_intro"
         android:textColor="#FFFFFF"
         android:textSize="10pt" />
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
- 		android:layout_marginBottom="1dp">
-		<include layout="@layout/main_tab" />
-	</RelativeLayout>
+    
+
 </LinearLayout>
 
 </merge>
