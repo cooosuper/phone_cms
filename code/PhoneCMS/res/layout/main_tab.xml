@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="51dip"
+	>
+
+    <Button
+        android:id="@+id/main_tab_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/module_back"
+        android:text="公司简介"
+        android:textColor="#050505" />
+
+	<Button 
+		android:id="@+id/main_tab_product" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:text="产品管理"
+		android:textColor="#050505" 		
+		android:background="@drawable/module_back" />
+	<Button 
+		android:id="@+id/main_tab_activity" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:text="活动管理"	
+		android:textColor="#050505" 	
+		android:background="@drawable/module_back" />
+	<Button 
+		android:id="@+id/main_tab_more" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:text="更多..."	
+		android:textColor="#050505" 	
+		android:background="@drawable/module_back" />
+</LinearLayout>
