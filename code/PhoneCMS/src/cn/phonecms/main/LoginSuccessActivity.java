@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class LoginSuccessActivity extends Activity {
+public class LoginSuccessActivity extends BaseActivity {
   
   private Button appRegisterBtnCompany;
   private Button appLogoffBtn;
@@ -34,6 +34,7 @@ public class LoginSuccessActivity extends Activity {
       
   }
   
+ 
   private void doTaskRegisterCompany() {
     Intent intent = new Intent();
     intent.setClass(LoginSuccessActivity.this, RegisterCompanyActivity.class);
