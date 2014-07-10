@@ -1,9 +1,12 @@
 package cn.phonecms.main;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.view.KeyEvent;
 
 public class ManageActivity extends BaseActivity{
 
@@ -20,9 +23,14 @@ public class ManageActivity extends BaseActivity{
 
     backBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
-        finish();
+        Intent myIntent = new Intent();
+        myIntent = new Intent(ManageActivity.this, CompanyLoginSuccessActivity.class);
+        startActivity(myIntent);
+        ManageActivity.this.finish();
       }
     });
+    
+
     
     addActivityBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 

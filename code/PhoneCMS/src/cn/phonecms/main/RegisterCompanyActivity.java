@@ -45,7 +45,7 @@ public class RegisterCompanyActivity extends Activity {
     
     backBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
-        finish();
+        RegisterCompanyActivity.this.finish();
       }
     });
     

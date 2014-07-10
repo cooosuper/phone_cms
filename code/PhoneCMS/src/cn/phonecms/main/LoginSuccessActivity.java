@@ -28,7 +28,7 @@ public class LoginSuccessActivity extends BaseActivity {
       
       appLogoffBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
-            finish();
+            LoginSuccessActivity.this.finish();
         }
       });
       

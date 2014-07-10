@@ -22,7 +22,7 @@ public class CompanyLoginSuccessActivity extends BaseActivity {
       
       appLogoffBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
-            finish();
+            CompanyLoginSuccessActivity.this.finish();
         }
       });
       
