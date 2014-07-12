@@ -63,7 +63,7 @@ public class ManageSpecificActivity extends Activity implements OnClickListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_specific_activity);
+        setContentView(R.layout.activity_modify_specific_activity);
         initView();
     }
     
