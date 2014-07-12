@@ -3,12 +3,14 @@ package cn.phonecms.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class LoginSuccessActivity extends BaseActivity {
   
+  private static final String TAG = null;
   private Button appRegisterBtnCompany;
   private Button appLogoffBtn;
   
