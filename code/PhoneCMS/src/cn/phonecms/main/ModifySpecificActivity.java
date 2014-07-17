@@ -65,6 +65,9 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_specific_activity);
         initView();
+        
+        Intent intent = getIntent();
+        String ActivityId = intent.getStringExtra("ActivityId");
     }
     
     /**
