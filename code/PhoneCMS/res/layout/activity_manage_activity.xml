@@ -24,9 +24,9 @@
 				android:layout_marginRight="10dip" 
 				android:background="@drawable/xml_list_config_bg"
 				android:descendantFocusability="blocksDescendants"
-				android:divider="@color/divider1" 
 				android:dividerHeight="1dip"
-				android:listSelector="@drawable/xml_list_bg"/>
+				android:listSelector="@drawable/xml_list_bg"
+				android:divider="@drawable/filter_spider_line" />
 		</LinearLayout>
 	</ScrollView>
 	<include layout="@layout/main_tab" />
