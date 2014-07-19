@@ -21,8 +21,7 @@ import android.view.KeyEvent;
 
 public class ManageActivity extends BaseActivity{
 
-  private Button backBtn;
-  private Button addActivityBtn;
+  private Button backBtn, addActivityBtn;
   private ListView catergory_listview;
   private LayoutInflater layoutInflater;
   
@@ -41,6 +40,12 @@ public class ManageActivity extends BaseActivity{
       public void onItemClick(AdapterView<?> adapterview, View view, int parent,
           long id) {
         Toast.makeText(ManageActivity.this, "你点击了地"+id+"项", 1).show();
+        
+        Intent myIntent = new Intent();
+        myIntent.putExtra("ActivityId", id);
+        myIntent = new Intent(ManageActivity.this, ViewSpecificActivity.class);
+        startActivity(myIntent);
+        ManageActivity.this.finish();
         
       }
     });

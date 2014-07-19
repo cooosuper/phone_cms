@@ -51,7 +51,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
 	 */
 	private static String requestURL = "http://***.***.***.***:8080/***/***";
 //	private static String requestURL = "http://img.epalmpay.cn/order_userpic.php";
-	private Button selectButton,uploadButton;
+	private Button selectButton,uploadButton,backBtn;
 	private ImageView imageView;
 	private TextView uploadImageResult;
 	private ProgressBar progressBar;
@@ -66,6 +66,15 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         setContentView(R.layout.activity_modify_specific_activity);
         initView();
         
+        backBtn.setOnClickListener(new OnClickListener() { 
+          public void onClick(View v) { 
+            Intent myIntent = new Intent();
+            myIntent = new Intent(ModifySpecificActivity.this, ViewSpecificActivity.class);
+            startActivity(myIntent);
+            ModifySpecificActivity.this.finish();
+          }
+        });
+        
         Intent intent = getIntent();
         String ActivityId = intent.getStringExtra("ActivityId");
     }
@@ -78,6 +87,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
+        backBtn = (Button) this.findViewById(R.id.main_top_back);
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);
