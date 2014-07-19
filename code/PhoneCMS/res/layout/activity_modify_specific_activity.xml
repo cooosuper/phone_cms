@@ -25,8 +25,8 @@
 				>
 			    <ImageView 
 			       android:id="@+id/app_image_btn"
-			       android:layout_width="wrap_content"    
-		           android:layout_height="wrap_content" 
+			       android:layout_width="100dip"    
+		           android:layout_height="100dip" 
 		           android:layout_centerVertical="true"
 		           android:layout_centerHorizontal="true"
 		           android:src="@drawable/ic_launcher"/> 
