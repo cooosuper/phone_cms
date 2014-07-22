@@ -18,11 +18,12 @@ public class CompanyLoginSuccessActivity extends BaseActivity {
       
       appLogoffBtn = (Button)findViewById(R.id.log_off);
       
-
-      
       appLogoffBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
-            CompanyLoginSuccessActivity.this.finish();
+          Intent myIntent = new Intent();
+          myIntent = new Intent(CompanyLoginSuccessActivity.this, MainActivity.class);
+          startActivity(myIntent);
+          CompanyLoginSuccessActivity.this.finish();
         }
       });
       

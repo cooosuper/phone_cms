@@ -89,10 +89,10 @@ public class BaseActivity extends Activity {
         public void onClick(View v) {
           switch (v.getId()) {
             case R.id.main_tab_company:
-              forward(LoginActivity.class);
+              forward(ManageCompany.class);
               break;
             case R.id.main_tab_product:
-              forward(LoginActivity.class);
+              forward(ManageProduct.class);
               break;
             case R.id.main_tab_activity:
               forward(ManageActivity.class);

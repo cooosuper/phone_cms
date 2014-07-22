@@ -24,88 +24,90 @@ import android.widget.Toast;
 import cn.phonecms.main.network.UploadUtil;
 import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
 
-public class AddActivity extends Activity implements OnClickListener,OnUploadProcessListener{
+public class ModifySpecificProduct extends Activity implements OnClickListener,OnUploadProcessListener
+{
   private static final String TAG = "uploadImage";
   
-  /*** 去上传文件*/
+  /*** 去上传文件  */
   protected static final int TO_UPLOAD_FILE = 1;  
-  /*** 上传文件响应 */
+  /*** 上传文件响应  */
   protected static final int UPLOAD_FILE_DONE = 2;  //
-  /*** 选择文件*/
+  /*** 选择文件  */
   public static final int TO_SELECT_PHOTO = 3;
-  /*** 上传初始化*/
+  /*** 上传初始化  */
   private static final int UPLOAD_INIT_PROCESS = 4;
-  /*** 上传中*/
+  /*** 上传中  */
   private static final int UPLOAD_IN_PROCESS = 5;
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
-  private Button selectButton,uploadButton,backBtn,addBtn;
+  private Button selectButton,uploadButton,backBtn, modifyBtn;
   private ImageView imageView;
   private TextView uploadImageResult;
   private ProgressBar progressBar;
   private String picPath = null;
   private ProgressDialog progressDialog;
   
-  private String activityName, activityStartTime, activityEndTime, activityDesc;
-  private EditText appActivityName, appActivityStarttime, appActivityendtime, appActivitydesc;
-  private int activityImage;
+  private String productName, productPrice, productDesc;
+  private EditText appProductName, appProductPrice, appProductdesc;
+  private int productImage;
   
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_activity);
+        setContentView(R.layout.activity_modify_specific_product);
         initView();
         
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-            Intent myIntent = new Intent();
-            myIntent = new Intent(AddActivity.this, ManageActivity.class);
-            startActivity(myIntent);
-            AddActivity.this.finish();
+          Intent myIntent = new Intent();
+          myIntent = new Intent(ModifySpecificProduct.this, ViewSpecificProduct.class);
+          startActivity(myIntent);
+          ModifySpecificProduct.this.finish();
           }
         });
         
-        addBtn.setOnClickListener(new OnClickListener(){
+        modifyBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-            Intent myIntent = new Intent();
-            myIntent.putExtra("activityName", activityName);
-            myIntent.putExtra("activityStartTime",activityStartTime);
-            myIntent.putExtra("activityEndTime",activityEndTime);
-            myIntent.putExtra("activityDesc",activityDesc);
-            myIntent.putExtra("activityImage",activityImage);
-            myIntent = new Intent(AddActivity.this, ManageActivity.class);
-            startActivity(myIntent);
-            AddActivity.this.finish();
-            Toast.makeText(AddActivity.this, "添加成功", 1).show();
+           Intent mineIntent = new Intent();         
+           mineIntent.putExtra("productName", productName);
+           mineIntent.putExtra("productPrice",productPrice);
+           mineIntent.putExtra("productDesc",productDesc);
+           mineIntent.putExtra("productImage",productImage);   
+           mineIntent = new Intent(ModifySpecificProduct.this, ManageProduct.class);
+           startActivity(mineIntent);
+           ModifySpecificProduct.this.finish();
+           Toast.makeText(ModifySpecificProduct.this, "修改成功", 1).show();
           }
         });
+      
+        Intent intent = getIntent();
+        String productId = intent.getStringExtra("ProductId");
     }
     
-    /*** 初始化数据 */
+    /**
+     * 初始化数据
+     */
   private void initView() {
         selectButton = (Button) this.findViewById(R.id.app_selectImage_btn);
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
+        modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
+        backBtn = (Button) this.findViewById(R.id.main_top_back);
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         
-        backBtn = (Button) this.findViewById(R.id.main_top_back);
-        addBtn = (Button) this.findViewById(R.id.main_top_add);
-        appActivityName = (EditText) this.findViewById(R.id.app_activity_name);     
-        appActivityStarttime = (EditText) this.findViewById(R.id.app_activity_start_time);
-        appActivityendtime = (EditText) this.findViewById(R.id.app_activity_end_time);
-        appActivitydesc = (EditText) this.findViewById(R.id.app_activity_desc);
+        appProductName = (EditText)findViewById(R.id.app_product_name);
+        appProductPrice = (EditText)findViewById(R.id.app_product_price);
+        appProductdesc = (EditText)findViewById(R.id.app_product_desc);
         
-        
-        activityName = appActivityName.getText().toString();
-        activityStartTime = appActivityStarttime.getText().toString();
-        activityEndTime =  appActivityendtime.getText().toString();
-        activityDesc = appActivitydesc.getText().toString();
-        activityImage = imageView.getId();
+        productName = appProductName.getText().toString();
+        productPrice = appProductPrice.getText().toString();
+        productDesc =  appProductdesc.getText().toString();
+
   }
 
   @Override
@@ -140,7 +142,10 @@ public class AddActivity extends Activity implements OnClickListener,OnUploadPro
     super.onActivityResult(requestCode, resultCode, data);
   }
   
-  /*** 上传服务器响应回调 */
+
+  /**
+   * 上传服务器响应回调
+   */
   @Override
   public void onUploadDone(int responseCode, String message) {
     progressDialog.dismiss();

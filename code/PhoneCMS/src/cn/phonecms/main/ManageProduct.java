@@ -19,19 +19,19 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.view.KeyEvent;
 
-public class ManageActivity extends BaseActivity{
+public class ManageProduct extends BaseActivity{
 
-  private Button backBtn, addActivityBtn;
+  private Button backBtn, addProductBtn;
   private ListView catergory_listview;
   private LayoutInflater layoutInflater;
   
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     
-    setContentView(R.layout.activity_manage_activity);
+    setContentView(R.layout.activity_manage_product);
    
     backBtn = (Button)findViewById(R.id.main_top_back);
-    addActivityBtn = (Button)findViewById(R.id.main_top_plus);
+    addProductBtn = (Button)findViewById(R.id.main_top_plus);
     catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);
     catergory_listview.setAdapter(new CatergorAdapter());
     catergory_listview.setOnItemClickListener(new OnItemClickListener() {
@@ -39,13 +39,13 @@ public class ManageActivity extends BaseActivity{
       @Override
       public void onItemClick(AdapterView<?> adapterview, View view, int parent,
           long id) {
-        Toast.makeText(ManageActivity.this, "你点击了地"+id+"项", 1).show();
+        Toast.makeText(ManageProduct.this, "你点击了地"+id+"项", 1).show();
         
         Intent myIntent = new Intent();
         myIntent.putExtra("ActivityId", id);
-        myIntent = new Intent(ManageActivity.this, ViewSpecificActivity.class);
+        myIntent = new Intent(ManageProduct.this, ViewSpecificProduct.class);
         startActivity(myIntent);
-        ManageActivity.this.finish();
+        ManageProduct.this.finish();
         
       }
     });
@@ -54,21 +54,21 @@ public class ManageActivity extends BaseActivity{
     backBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
         Intent myIntent = new Intent();
-        myIntent = new Intent(ManageActivity.this, CompanyLoginSuccessActivity.class);
+        myIntent = new Intent(ManageProduct.this, CompanyLoginSuccessActivity.class);
         startActivity(myIntent);
-        ManageActivity.this.finish();
+        ManageProduct.this.finish();
       }
     });
     
 
-    //添加Activity事件
-    addActivityBtn.setOnClickListener(new OnClickListener() { 
+    //添加Product事件
+    addProductBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
        // do add related coding
         Intent myIntent = new Intent();
-        myIntent = new Intent(ManageActivity.this, AddActivity.class);
+        myIntent = new Intent(ManageProduct.this, AddProduct.class);
         startActivity(myIntent);
-        ManageActivity.this.finish();
+        ManageProduct.this.finish();
       }
     });
         
@@ -99,7 +99,7 @@ public class ManageActivity extends BaseActivity{
     public View getView(int position, View convertView, ViewGroup parent) {
 
       ViewHolder holder=new ViewHolder();
-      layoutInflater=LayoutInflater.from(ManageActivity.this);
+      layoutInflater=LayoutInflater.from(ManageProduct.this);
       
       //组装数据
       if(convertView==null){
@@ -130,13 +130,13 @@ public class ManageActivity extends BaseActivity{
       R.drawable.catergory_digtcamer,R.drawable.catergory_furnitrue,R.drawable.catergory_mobile,R.drawable.catergory_skincare
        };
   //给照片添加文字显示(Title)
-  private String[] mTitleValues = { "家电活动", "图书活动", "衣服活动", "笔记本活动", "数码活动",
-      "家具活动", "手机活动", "护肤活动" };
+  private String[] mTitleValues = { "家电产品", "图书产品", "衣服产品", "笔记本产品", "数码产品",
+      "家具产品", "手机产品", "护肤产品" };
   
   private String[] mContentValues={"家电/生活电器/厨房电器", "电子书/图书/小说","男装/女装/童装", "笔记本/笔记本配件/产品外设", "摄影摄像/数码配件", 
       "家具/灯具/生活用品", "手机通讯/运营商/手机配件", "面部护理/口腔护理/..."};
 
-  
+
   public static class ViewHolder {
     ImageView image;
     TextView title;
@@ -147,5 +147,5 @@ public class ManageActivity extends BaseActivity{
     super.onStart();
     this.bindMainTab();
   }
-
+  
 }

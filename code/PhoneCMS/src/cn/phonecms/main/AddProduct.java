@@ -24,7 +24,7 @@ import android.widget.Toast;
 import cn.phonecms.main.network.UploadUtil;
 import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
 
-public class AddActivity extends Activity implements OnClickListener,OnUploadProcessListener{
+public class AddProduct extends Activity implements OnClickListener,OnUploadProcessListener{
   private static final String TAG = "uploadImage";
   
   /*** 去上传文件*/
@@ -46,38 +46,37 @@ public class AddActivity extends Activity implements OnClickListener,OnUploadPro
   private String picPath = null;
   private ProgressDialog progressDialog;
   
-  private String activityName, activityStartTime, activityEndTime, activityDesc;
-  private EditText appActivityName, appActivityStarttime, appActivityendtime, appActivitydesc;
-  private int activityImage;
+  private String productName, productPrice, productDesc;
+  private EditText appProductName, appProductPrice, appProductdesc;
+  private int productImage;
   
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_activity);
+        setContentView(R.layout.activity_add_product);
         initView();
         
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
             Intent myIntent = new Intent();
-            myIntent = new Intent(AddActivity.this, ManageActivity.class);
+            myIntent = new Intent(AddProduct.this, ManageActivity.class);
             startActivity(myIntent);
-            AddActivity.this.finish();
+            AddProduct.this.finish();
           }
         });
         
         addBtn.setOnClickListener(new OnClickListener(){
           public void onClick(View v) { 
             Intent myIntent = new Intent();
-            myIntent.putExtra("activityName", activityName);
-            myIntent.putExtra("activityStartTime",activityStartTime);
-            myIntent.putExtra("activityEndTime",activityEndTime);
-            myIntent.putExtra("activityDesc",activityDesc);
-            myIntent.putExtra("activityImage",activityImage);
-            myIntent = new Intent(AddActivity.this, ManageActivity.class);
+            myIntent.putExtra("productName", productName);
+            myIntent.putExtra("productPrice",productPrice);
+            myIntent.putExtra("productDesc",productDesc);
+            myIntent.putExtra("productImage",productImage);  
+            myIntent = new Intent(AddProduct.this, ManageProduct.class);
             startActivity(myIntent);
-            AddActivity.this.finish();
-            Toast.makeText(AddActivity.this, "添加成功", 1).show();
+            AddProduct.this.finish();
+            Toast.makeText(AddProduct.this, "添加成功", 1).show();
           }
         });
     }
@@ -95,17 +94,14 @@ public class AddActivity extends Activity implements OnClickListener,OnUploadPro
         
         backBtn = (Button) this.findViewById(R.id.main_top_back);
         addBtn = (Button) this.findViewById(R.id.main_top_add);
-        appActivityName = (EditText) this.findViewById(R.id.app_activity_name);     
-        appActivityStarttime = (EditText) this.findViewById(R.id.app_activity_start_time);
-        appActivityendtime = (EditText) this.findViewById(R.id.app_activity_end_time);
-        appActivitydesc = (EditText) this.findViewById(R.id.app_activity_desc);
+        appProductName = (EditText)findViewById(R.id.app_product_name);
+        appProductPrice = (EditText)findViewById(R.id.app_product_price);
+        appProductdesc = (EditText)findViewById(R.id.app_product_desc);
         
-        
-        activityName = appActivityName.getText().toString();
-        activityStartTime = appActivityStarttime.getText().toString();
-        activityEndTime =  appActivityendtime.getText().toString();
-        activityDesc = appActivitydesc.getText().toString();
-        activityImage = imageView.getId();
+        productName = appProductName.getText().toString();
+        productPrice = appProductPrice.getText().toString();
+        productDesc =  appProductdesc.getText().toString();
+        productImage = imageView.getId();
   }
 
   @Override

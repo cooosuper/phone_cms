@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,7 +24,8 @@ import android.widget.Toast;
 import cn.phonecms.main.network.UploadUtil;
 import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
 
-public class ModifySpecificActivity extends Activity implements OnClickListener,OnUploadProcessListener{
+public class ModifySpecificActivity extends Activity implements OnClickListener,OnUploadProcessListener
+{
 	private static final String TAG = "uploadImage";
 	
 	/**
@@ -46,18 +48,18 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
 	 * 上传中
 	 */
 	private static final int UPLOAD_IN_PROCESS = 5;
-	/***
-	 * 这里的这个URL是我服务器的javaEE环境URL
-	 */
+
 	private static String requestURL = "http://***.***.***.***:8080/***/***";
-//	private static String requestURL = "http://img.epalmpay.cn/order_userpic.php";
-	private Button selectButton,uploadButton,backBtn;
+	private Button selectButton,uploadButton,backBtn, modifyBtn;
 	private ImageView imageView;
 	private TextView uploadImageResult;
 	private ProgressBar progressBar;
+  private String picPath = null;
+  private ProgressDialog progressDialog;
 	
-	private String picPath = null;
-	private ProgressDialog progressDialog;
+  private String activityName, activityStartTime, activityEndTime, activityDesc;
+  private EditText appActivityName, appActivityStarttime, appActivityendtime, appActivitydesc;
+  private int activityImage;
 	
     /** Called when the activity is first created. */
     @Override
@@ -68,15 +70,30 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-            Intent myIntent = new Intent();
-            myIntent = new Intent(ModifySpecificActivity.this, ViewSpecificActivity.class);
-            startActivity(myIntent);
-            ModifySpecificActivity.this.finish();
+          Intent myIntent = new Intent();
+          myIntent = new Intent(ModifySpecificActivity.this, ViewSpecificActivity.class);
+          startActivity(myIntent);
+          ModifySpecificActivity.this.finish();
           }
         });
         
+        modifyBtn.setOnClickListener(new OnClickListener() { 
+          public void onClick(View v) { 
+           Intent mineIntent = new Intent();         
+           mineIntent.putExtra("activityName", activityName);
+           mineIntent.putExtra("activityStartTime",activityStartTime);
+           mineIntent.putExtra("activityEndTime",activityEndTime);
+           mineIntent.putExtra("activityDesc",activityDesc);
+           mineIntent.putExtra("activityImage",activityImage);   
+           mineIntent = new Intent(ModifySpecificActivity.this, ManageActivity.class);
+           startActivity(mineIntent);
+           ModifySpecificActivity.this.finish();
+           Toast.makeText(ModifySpecificActivity.this, "修改成功", 1).show();
+          }
+        });
+      
         Intent intent = getIntent();
-        String ActivityId = intent.getStringExtra("ActivityId");
+        String activityId = intent.getStringExtra("ActivityId");
     }
     
     /**
@@ -87,11 +104,23 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
+        modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
         backBtn = (Button) this.findViewById(R.id.main_top_back);
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        
+        appActivityName = (EditText)findViewById(R.id.app_activity_name);
+        appActivityStarttime = (EditText)findViewById(R.id.app_activity_start_time);
+        appActivityendtime = (EditText)findViewById(R.id.app_activity_end_time);
+        appActivitydesc = (EditText)findViewById(R.id.app_activity_desc);
+        
+        activityName = appActivityName.getText().toString();
+        activityStartTime = appActivityStarttime.getText().toString();
+        activityEndTime =  appActivityendtime.getText().toString();
+        activityDesc = appActivitydesc.getText().toString();
+        activityImage = imageView.getId();
 	}
 
 	@Override

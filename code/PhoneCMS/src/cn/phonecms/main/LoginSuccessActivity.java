@@ -11,9 +11,8 @@ import android.widget.Button;
 public class LoginSuccessActivity extends BaseActivity {
   
   private static final String TAG = null;
-  private Button appRegisterBtnCompany;
-  private Button appLogoffBtn;
-  
+  private Button appRegisterBtnCompany, appLogoffBtn;
+
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     
@@ -30,13 +29,15 @@ public class LoginSuccessActivity extends BaseActivity {
       
       appLogoffBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
-            LoginSuccessActivity.this.finish();
+          Intent myIntent = new Intent();
+          myIntent = new Intent(LoginSuccessActivity.this, MainActivity.class);
+          startActivity(myIntent);
+          LoginSuccessActivity.this.finish();
         }
       });
       
   }
-  
- 
+   
   private void doTaskRegisterCompany() {
     Intent intent = new Intent();
     intent.setClass(LoginSuccessActivity.this, RegisterCompanyActivity.class);
