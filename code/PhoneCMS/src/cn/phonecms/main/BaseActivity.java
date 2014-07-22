@@ -5,21 +5,71 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.view.View;
-
+import android.widget.PopupWindow;
+import android.view.Gravity;
 
 public class BaseActivity extends Activity {
   
-  private Button bTabCompany;
-  private Button bTabProduct;
-  private Button bTabActivity;
-  private Button bTabMore;
+  private Button bTabCompany,bTabProduct,bTabActivity,bTabMore,commentManage,subcompanyManage,recruitManage;
+  private PopupWindow popupWindow;
   
   
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+  }
+  
+  protected void initPopuptWindow() {
+
+   View popupWindow_view = getLayoutInflater().inflate(R.layout.pop, null, false);
+   
+   popupWindow      = new PopupWindow(popupWindow_view, 200, 350, true);
+   commentManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_comment);
+   subcompanyManage = (Button) popupWindow_view.findViewById(R.id.pop_tab_subcompany);
+   recruitManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_recruit);
+
+   commentManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+
+     forward(ManageComment.class);
+     System.out.println("评论管理操作");
+
+     popupWindow.dismiss();
+     }
+   });
+   // 分店管理
+   subcompanyManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+       System.out.println("分店管理操作");
+       popupWindow.dismiss();
+     }
+   });
+   // 招聘管理
+   recruitManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+       System.out.println("招聘操作");
+       popupWindow.dismiss();
+     }
+   });
+
+ }
+  
+  /**** 获取PopupWindow实例  */
+  private void getPopupWindow() {
+
+    if (null != popupWindow) {
+      popupWindow.dismiss();
+      return;
+      } else {
+      initPopuptWindow();
+      }
   }
     
   public void forward (Class<?> classObj) {
@@ -29,55 +79,7 @@ public class BaseActivity extends Activity {
     this.startActivity(intent);
     this.finish();
   }
-  
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.main, menu);
-    return true;
-  }
-  
-  public boolean onOptionsItemSelected(MenuItem item) 
-  {
-
-    super.onOptionsItemSelected(item);
-
-    switch (item.getItemId()) 
-    {
-
-      case R.id.company:                             
-//        forward(LoginActivity.class);
-        break;
-  
-      case R.id.product:                           
-//        forward(LoginActivity.class);
-        break;
-  
-      case R.id.activity:                          
-        forward(ManageActivity.class);
-        break;
-      
-      case R.id.more:
-//        forward(LoginActivity.class);
-        break;
-      
-      case R.id.comment:
-//        forward(LoginActivity.class);
-        break;
-       
-      case R.id.recruit:
-//        forward(LoginActivity.class);
-        break;
-        
-      case R.id.sub_company:
-//        forward(LoginActivity.class); 
-        break;
-
-    }
-    
-    return super.onOptionsItemSelected(item);
-
-    }
-  
+   
   public void bindMainTab () {
     bTabCompany  = (Button) findViewById(R.id.main_tab_company);
     bTabProduct  = (Button) findViewById(R.id.main_tab_product);
@@ -98,7 +100,12 @@ public class BaseActivity extends Activity {
               forward(ManageActivity.class);
               break;
             case R.id.main_tab_more:
-              bindMainTab();
+              getPopupWindow();
+              popupWindow.setFocusable(true);  
+              popupWindow.setOutsideTouchable(true);  
+              int[] location = new int[2];  
+              v.getLocationOnScreen(location);  
+              popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, location[0], location[1]-popupWindow.getHeight());  
               break;
           }
         }
