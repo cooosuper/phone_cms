@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@android:color/darker_gray">
+		<Button android:id="@+id/pop_tab_comment"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/module_back"
+		android:text="评论管理"/>
+		<Button android:id="@+id/pop_tab_subcompany"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/module_back"
+		android:text="分店管理"/>
+		<Button android:id="@+id/pop_tab_recruit"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/module_back"
+		android:text="招聘管理"/>
+</LinearLayout>
