@@ -10,18 +10,11 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
 			android:orientation="vertical">
-			
-		    <TextView 
-				android:layout_width="wrap_content" 
-				android:textAppearance="?android:attr/textAppearanceLarge" 
-				android:layout_height="wrap_content" 
-				android:layout_gravity="center_horizontal" 
-				android:text="活动" 
-				android:layout_margin="20dip" 
-				android:textSize="10pt"/>
+
 		    <RelativeLayout 
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content"
+				android:layout_marginTop="60dip"
 				>
 			    <ImageView 
 			       android:id="@+id/app_image_btn"
@@ -29,8 +22,23 @@
 		           android:layout_height="100dip" 
 		           android:layout_centerVertical="true"
 		           android:layout_centerHorizontal="true"
-		           android:src="@drawable/ic_launcher"/> 		        
-		        
+		           android:src="@drawable/ic_launcher"/> 
+		        <Button 
+					android:id="@+id/app_selectImage_btn" 
+					android:layout_width="35dip" 
+					android:layout_height="wrap_content" 
+					android:layout_centerVertical="true"
+					android:text="选图" 
+					android:layout_toRightOf="@id/app_image_btn"
+					android:background="@drawable/module_back"/>
+		        <Button 
+					android:id="@+id/app_uploadImage_btn" 
+					android:layout_width="35dip" 
+					android:layout_height="wrap_content" 
+					android:layout_centerVertical="true"
+					android:text="上传" 
+					android:layout_toRightOf="@id/app_selectImage_btn"
+					android:background="@drawable/module_back"/>
 		   </RelativeLayout> 
 
 		</LinearLayout>
@@ -45,60 +53,73 @@
 			        android:layout_height="wrap_content"
 			        android:text="" />
 		    
-		</LinearLayout>	
+		</LinearLayout>		
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">
+		    
+		   <ProgressBar
+		        android:layout_marginLeft="10dip"
+		        android:layout_marginRight="10dip"
+		        android:id="@+id/progressBar1"
+		        style="?android:attr/progressBarStyleHorizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" />
+		    
+		</LinearLayout>
 		<LinearLayout 
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
 			android:orientation="vertical"
 			android:layout_marginTop="50dip">
-			
-		    <RelativeLayout 
+		   	<RelativeLayout 
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content">
-				<TextView 
+				<EditText 
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="40dip" 
-					android:id="@+id/app_activity_start_time" 
+					android:id="@+id/app_product_name" 
 					android:layout_gravity="center_horizontal"
 					android:layout_marginLeft="160dip"/>
 
 				<TextView
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
-				    android:layout_alignBaseline="@+id/app_activity_start_time"
-				    android:layout_alignBottom="@+id/app_activity_start_time"
+				    android:layout_alignBaseline="@+id/app_product_name"
+				    android:layout_alignBottom="@+id/app_product_name"
 				    android:layout_alignParentLeft="true"
 				    android:layout_gravity="center_horizontal"
 				    android:layout_marginLeft="27dp"
-				    android:text="活动开始时间"
+				    android:text="产品名称"
+				    android:textAppearance="?android:attr/textAppearanceLarge"
+				    android:textSize="7pt" />
+			</RelativeLayout>			
+		    <RelativeLayout 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+				<EditText 
+					android:layout_weight="1" 
+					android:layout_width="150dip" 
+					android:layout_height="40dip" 
+					android:id="@+id/app_product_price" 
+					android:layout_gravity="center_horizontal"
+					android:layout_marginLeft="160dip"/>
+
+				<TextView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignBaseline="@+id/app_product_price"
+				    android:layout_alignBottom="@+id/app_product_price"
+				    android:layout_alignParentLeft="true"
+				    android:layout_gravity="center_horizontal"
+				    android:layout_marginLeft="27dp"
+				    android:text="产品价格"
 				    android:textAppearance="?android:attr/textAppearanceLarge"
 				    android:textSize="7pt" />
 
-			</RelativeLayout>
-
-			<RelativeLayout
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content" >
-
-			    <TextView
-			        android:id="@+id/app_activity_end_time"
-			        android:layout_width="150dp"
-			        android:layout_height="40dip"
-			        android:layout_marginLeft="160dip"
-			        android:layout_weight="1"
-			        android:inputType="textPassword" />
-
-			    <TextView
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_alignParentTop="true"
-			        android:layout_marginLeft="27dp"
-			        android:text="活动结束时间"
-			        android:textAppearance="?android:attr/textAppearanceLarge"
-			        android:textSize="7pt" />
-			</RelativeLayout>
-			
+			</RelativeLayout>			
 			<RelativeLayout
 			    android:layout_width="fill_parent"
 			    android:layout_height="80dp" >
@@ -108,28 +129,17 @@
 					android:textAppearance="?android:attr/textAppearanceLarge" 
 					android:layout_height="wrap_content" 
 					android:layout_marginLeft="27dp"
-					android:text="活动说明" 
+					android:text="产品说明" 
 					android:textSize="7pt" 
 					android:layout_marginTop="5dip"/>
-				<TextView 
+				<EditText 
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="80dip" 
-					android:inputType="textPassword" 
-					android:id="@+id/app_activity_desc" 
+					android:id="@+id/app_product_desc" 
 					android:layout_marginLeft="160dip"/>
 					
 			</RelativeLayout>
-	
-
-		</LinearLayout>
-	<WebView android:id="@+id/web_map" 
-        android:layout_height="fill_parent" 
-        android:layout_weight="1" 
-        android:layout_width="fill_parent" />
-    
-		<include layout="@layout/main_tab" />
-	
-	
+		</LinearLayout>	
 </LinearLayout>
 </merge>
