@@ -43,7 +43,7 @@ public class ManageCompany extends BaseActivity{
         
         Intent myIntent = new Intent();
         myIntent.putExtra("ActivityId", id);
-        myIntent = new Intent(ManageCompany.this, ViewSpecificCompany.class);
+        myIntent = new Intent(ManageCompany.this, ModifySpecificCompany.class);
         startActivity(myIntent);
         ManageCompany.this.finish();
         
