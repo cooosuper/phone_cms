@@ -8,7 +8,7 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 //import com.example.volleytest.R;
 
-import cn.phonecms.cache.BitmapCache;
+import cn.phonecms.main.cache.BitmapCache;
 
 
 import android.content.Context;
