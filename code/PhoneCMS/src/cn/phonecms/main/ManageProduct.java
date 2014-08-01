@@ -2,6 +2,16 @@ package cn.phonecms.main;
 
 
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.ImageLoader.ImageListener;
+//import com.example.volleytest.R;
+
+import cn.phonecms.cache.BitmapCache;
+
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -33,7 +43,7 @@ public class ManageProduct extends BaseActivity{
     backBtn = (Button)findViewById(R.id.main_top_back);
     addProductBtn = (Button)findViewById(R.id.main_top_plus);
     catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);
-    catergory_listview.setAdapter(new CatergorAdapter());
+    catergory_listview.setAdapter(new CatergorAdapter(this));
     catergory_listview.setOnItemClickListener(new OnItemClickListener() {
 
       @Override
@@ -74,7 +84,17 @@ public class ManageProduct extends BaseActivity{
         
   }
   
-  private class CatergorAdapter extends BaseAdapter{
+  public class CatergorAdapter extends BaseAdapter{
+
+    private Context ctx;
+    private RequestQueue mQueue;
+    private ImageLoader mImageLoader;
+    
+    public CatergorAdapter(Context ctx) {
+      this.ctx = ctx;
+      mQueue = Volley.newRequestQueue(ctx);
+      mImageLoader = new ImageLoader(mQueue, new BitmapCache());
+    }
 
     @Override
     public int getCount() {
@@ -85,7 +105,7 @@ public class ManageProduct extends BaseActivity{
     @Override
     public Object getItem(int position) {
       // TODO Auto-generated method stub
-      return 0;
+      return mImageIds[position];
     }
 
     @Override
@@ -94,31 +114,19 @@ public class ManageProduct extends BaseActivity{
       return 0;
     }
 
-    @SuppressWarnings("null")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-      ViewHolder holder=new ViewHolder();
-      layoutInflater=LayoutInflater.from(ManageProduct.this);
+      convertView = LayoutInflater.from(ctx).inflate(R.layout.activity_category_item, null);
+      ImageView imageView  = (ImageView) convertView.findViewById(R.id.catergory_image);
+      TextView catergoryItemTitle = (TextView)convertView.findViewById(R.id.catergoryitem_title);
+      TextView catergoryItemContent = (TextView)convertView.findViewById(R.id.catergoryitem_content);
       
-      //组装数据
-      if(convertView==null){
-        convertView=layoutInflater.inflate(R.layout.activity_category_item, null);
-        holder.image=(ImageView) convertView.findViewById(R.id.catergory_image);
-        holder.title=(TextView) convertView.findViewById(R.id.catergoryitem_title);
-        holder.content=(TextView) convertView.findViewById(R.id.catergoryitem_content);
-        //使用tag存储数据
-        convertView.setTag(holder);
-      }else{
-        holder=(ViewHolder) convertView.getTag();
-      }
-      holder.image.setImageResource(mImageIds[position]);
-      holder.title.setText(mTitleValues[position]);
-      holder.content.setText(mContentValues[position]);
-    //  holder.title.setText(array[position]);
-      
+      ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);
+          mImageLoader.get(mImageIds[position].toString(), listener);
+          catergoryItemTitle.setText(mTitleValues[position]);
+          catergoryItemContent.setText(mContentValues[position]);
       return convertView;
-    
     }
     
     
@@ -136,12 +144,6 @@ public class ManageProduct extends BaseActivity{
   private String[] mContentValues={"家电/生活电器/厨房电器", "电子书/图书/小说","男装/女装/童装", "笔记本/笔记本配件/产品外设", "摄影摄像/数码配件", 
       "家具/灯具/生活用品", "手机通讯/运营商/手机配件", "面部护理/口腔护理/..."};
 
-
-  public static class ViewHolder {
-    ImageView image;
-    TextView title;
-    TextView content;
-  }
   
   public void onStart() {
     super.onStart();
