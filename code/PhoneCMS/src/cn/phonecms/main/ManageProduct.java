@@ -2,32 +2,23 @@ package cn.phonecms.main;
 
 
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.Volley;
-import com.android.volley.toolbox.ImageLoader.ImageListener;
 
 
-import cn.phonecms.main.cache.BitmapCache;
 
 
-import android.content.Context;
+import cn.phonecms.main.adapter.CatergorAdapter;
+
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
-import android.view.KeyEvent;
 
 public class ManageProduct extends BaseActivity{
 
@@ -84,54 +75,54 @@ public class ManageProduct extends BaseActivity{
         
   }
   
-  public class CatergorAdapter extends BaseAdapter{
-
-    private Context ctx;
-    private RequestQueue mQueue;
-    private ImageLoader mImageLoader;
-    
-    public CatergorAdapter(Context ctx) {
-      this.ctx = ctx;
-      mQueue = Volley.newRequestQueue(ctx);
-      mImageLoader = new ImageLoader(mQueue, new BitmapCache());
-    }
-
-    @Override
-    public int getCount() {
-      // TODO Auto-generated method stub
-      return mImageIds.length;
-    }
-
-    @Override
-    public Object getItem(int position) {
-      // TODO Auto-generated method stub
-      return mImageIds[position];
-    }
-
-    @Override
-    public long getItemId(int position) {
-      // TODO Auto-generated method stub
-      return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-      convertView = LayoutInflater.from(ctx).inflate(R.layout.activity_category_item, null);
-      ImageView imageView  = (ImageView) convertView.findViewById(R.id.catergory_image);
-      TextView catergoryItemTitle = (TextView)convertView.findViewById(R.id.catergoryitem_title);
-      TextView catergoryItemContent = (TextView)convertView.findViewById(R.id.catergoryitem_content);
-      
-      ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);
-          mImageLoader.get(mImageIds[position].toString(), listener);
-          catergoryItemTitle.setText(mTitleValues[position]);
-          catergoryItemContent.setText(mContentValues[position]);
-      return convertView;
-    }
-    
-    
-    
-  }
+//  public class CatergorAdapter extends BaseAdapter{
+//
+//    private Context ctx;
+//    private RequestQueue mQueue;
+//    private ImageLoader mImageLoader;
+//    
+//    public CatergorAdapter(Context ctx) {
+//      this.ctx = ctx;
+//      mQueue = Volley.newRequestQueue(ctx);
+//      mImageLoader = new ImageLoader(mQueue, new BitmapCache());
+//    }
+//
+//    @Override
+//    public int getCount() {
+//      // TODO Auto-generated method stub
+//      return mImageIds.length;
+//    }
+//
+//    @Override
+//    public Object getItem(int position) {
+//      // TODO Auto-generated method stub
+//      return mImageIds[position];
+//    }
+//
+//    @Override
+//    public long getItemId(int position) {
+//      // TODO Auto-generated method stub
+//      return 0;
+//    }
+//
+//    @Override
+//    public View getView(int position, View convertView, ViewGroup parent) {
+//
+//      convertView = LayoutInflater.from(ctx).inflate(R.layout.activity_category_item, null);
+//      ImageView imageView  = (ImageView) convertView.findViewById(R.id.catergory_image);
+//      TextView catergoryItemTitle = (TextView)convertView.findViewById(R.id.catergoryitem_title);
+//      TextView catergoryItemContent = (TextView)convertView.findViewById(R.id.catergoryitem_content);
+//      
+//      ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);
+//          mImageLoader.get(mImageIds[position].toString(), listener);
+//          catergoryItemTitle.setText(mTitleValues[position]);
+//          catergoryItemContent.setText(mContentValues[position]);
+//      return convertView;
+//    }
+//    
+//    
+//    
+//  }
   
 //适配显示的图片数组
   private Integer[] mImageIds = {R.drawable.catergory_appliance,R.drawable.catergory_book,R.drawable.catergory_cloth,R.drawable.catergory_deskbook,
