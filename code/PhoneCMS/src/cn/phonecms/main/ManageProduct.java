@@ -6,7 +6,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
-//import com.example.volleytest.R;
+
 
 import cn.phonecms.main.cache.BitmapCache;
 
@@ -42,7 +42,7 @@ public class ManageProduct extends BaseActivity{
    
     backBtn = (Button)findViewById(R.id.main_top_back);
     addProductBtn = (Button)findViewById(R.id.main_top_plus);
-    catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);
+    catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);   
     catergory_listview.setAdapter(new CatergorAdapter(this));
     catergory_listview.setOnItemClickListener(new OnItemClickListener() {
 
