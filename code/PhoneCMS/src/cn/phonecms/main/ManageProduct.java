@@ -14,7 +14,6 @@ import cn.phonecms.main.cache.BitmapCache;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
-import android.view.KeyEvent;
+
 
 public class ManageProduct extends BaseActivity{
 
@@ -123,7 +122,7 @@ public class ManageProduct extends BaseActivity{
       TextView catergoryItemContent = (TextView)convertView.findViewById(R.id.catergoryitem_content);
       
       ImageListener listener = ImageLoader.getImageListener(imageView, android.R.drawable.ic_menu_rotate, android.R.drawable.ic_delete);
-          mImageLoader.get(mImageIds[position].toString(), listener);
+          mImageLoader.get(mImageIds[position], listener);
           catergoryItemTitle.setText(mTitleValues[position]);
           catergoryItemContent.setText(mContentValues[position]);
       return convertView;
@@ -134,8 +133,9 @@ public class ManageProduct extends BaseActivity{
   }
   
 //适配显示的图片数组
-  private Integer[] mImageIds = {R.drawable.catergory_appliance,R.drawable.catergory_book,R.drawable.catergory_cloth,R.drawable.catergory_deskbook,
-      R.drawable.catergory_digtcamer,R.drawable.catergory_furnitrue,R.drawable.catergory_mobile,R.drawable.catergory_skincare
+
+  private String[] mImageIds = {"http://imgstatic.baidu.com/img/image/shouye/fanbingbing.jpg","http://imgstatic.baidu.com/img/image/shouye/liuyifei.jpg","http://imgstatic.baidu.com/img/image/shouye/wanglihong.jpg","http://imgstatic.baidu.com/img/image/shouye/gaoyuanyuan.jpg",
+      "http://imgstatic.baidu.com/img/image/shouye/yaodi.jpg","http://imgstatic.baidu.com/img/image/shouye/zhonghanliang.jpg","http://imgstatic.baidu.com/img/image/shouye/xiezhen.jpg","http://imgstatic.baidu.com/img/image/shouye/yiping3.jpg"
        };
   //给照片添加文字显示(Title)
   private String[] mTitleValues = { "家电产品", "图书产品", "衣服产品", "笔记本产品", "数码产品",
