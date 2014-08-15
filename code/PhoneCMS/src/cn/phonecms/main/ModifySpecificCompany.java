@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class ModifySpecificCompany extends Activity implements OnClickListener
+public class ModifySpecificCompany extends BaseActivity implements OnClickListener
 {
   private static final String TAG = "uploadImage";
   
@@ -23,7 +23,7 @@ public class ModifySpecificCompany extends Activity implements OnClickListener
   /*** 选择文件  */
   public static final int TO_SELECT_PHOTO = 3;
 
-  private Button addImageButton,addDescButton,backBtn, modifyBtn;
+  private Button addImageButton,addDescButton,backBtn, modifyBtn,delCompanyButton;
   private ImageView imageView;
   private String picPath = null;
 
@@ -52,6 +52,16 @@ public class ModifySpecificCompany extends Activity implements OnClickListener
            Toast.makeText(ModifySpecificCompany.this, "修改成功", 1).show();
           }
         });
+        
+        delCompanyButton.setOnClickListener(new OnClickListener() { 
+          public void onClick(View v) { 
+           Intent mineIntent = new Intent();         
+           mineIntent = new Intent(ModifySpecificCompany.this, ManageCompany.class);
+           startActivity(mineIntent);
+           ModifySpecificCompany.this.finish();
+           Toast.makeText(ModifySpecificCompany.this, "删除成功", 1).show();
+          }
+        });
       
         Intent intent = getIntent();
         String productId = intent.getStringExtra("ProductId");
@@ -61,6 +71,7 @@ public class ModifySpecificCompany extends Activity implements OnClickListener
   private void initView() {
         addImageButton = (Button) this.findViewById(R.id.app_addImage_btn);
         addDescButton = (Button) this.findViewById(R.id.app_addDesc_btn);
+        delCompanyButton = (Button) this.findViewById(R.id.main_top_minus);
         addImageButton.setOnClickListener(this);
         addDescButton.setOnClickListener(this);
         modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
@@ -91,4 +102,9 @@ public class ModifySpecificCompany extends Activity implements OnClickListener
     }
     super.onActivityResult(requestCode, resultCode, data);
   }  
+  
+  public void onStart() {
+    super.onStart();
+    this.bindMainTab();
+  }
 }

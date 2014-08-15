@@ -60,7 +60,7 @@ public class AddProduct extends Activity implements OnClickListener,OnUploadProc
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
             Intent myIntent = new Intent();
-            myIntent = new Intent(AddProduct.this, ManageActivity.class);
+            myIntent = new Intent(AddProduct.this, ManageProduct.class);
             startActivity(myIntent);
             AddProduct.this.finish();
           }

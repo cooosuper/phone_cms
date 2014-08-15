@@ -28,7 +28,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class ManageProduct extends BaseActivity{
+public class ManageSubCompany extends BaseActivity{
 
   private Button backBtn, addProductBtn;
   private ListView catergory_listview;
@@ -36,7 +36,7 @@ public class ManageProduct extends BaseActivity{
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     
-    setContentView(R.layout.activity_manage_product);
+    setContentView(R.layout.activity_manage_subcompany);
    
     backBtn = (Button)findViewById(R.id.main_top_back);
     addProductBtn = (Button)findViewById(R.id.main_top_plus);
@@ -46,12 +46,12 @@ public class ManageProduct extends BaseActivity{
 
       @Override
       public void onItemClick(AdapterView<?> adapterview, View view, int parent,long id) {
-        Toast.makeText(ManageProduct.this, "你点击了地"+id+"项", 1).show();       
+        Toast.makeText(ManageSubCompany.this, "你点击了地"+id+"项", 1).show();       
         Intent myIntent = new Intent();
         myIntent.putExtra("ActivityId", id);
-        myIntent = new Intent(ManageProduct.this, ViewSpecificProduct.class);
+        myIntent = new Intent(ManageSubCompany.this, ViewSpecificSubCompany.class);
         startActivity(myIntent);
-        ManageProduct.this.finish();
+        ManageSubCompany.this.finish();
         
       }
     });
@@ -60,9 +60,9 @@ public class ManageProduct extends BaseActivity{
     backBtn.setOnClickListener(new OnClickListener() { 
       public void onClick(View v) { 
         Intent myIntent = new Intent();
-        myIntent = new Intent(ManageProduct.this, CompanyLoginSuccessActivity.class);
+        myIntent = new Intent(ManageSubCompany.this, CompanyLoginSuccessActivity.class);
         startActivity(myIntent);
-        ManageProduct.this.finish();
+        ManageSubCompany.this.finish();
       }
     });
     
@@ -72,9 +72,9 @@ public class ManageProduct extends BaseActivity{
       public void onClick(View v) { 
        // do add related coding
         Intent myIntent = new Intent();
-        myIntent = new Intent(ManageProduct.this, AddProduct.class);
+        myIntent = new Intent(ManageSubCompany.this, AddSubCompany.class);
         startActivity(myIntent);
-        ManageProduct.this.finish();
+        ManageSubCompany.this.finish();
       }
     });
         
@@ -135,8 +135,8 @@ public class ManageProduct extends BaseActivity{
       "http://imgstatic.baidu.com/img/image/shouye/yaodi.jpg","http://imgstatic.baidu.com/img/image/shouye/zhonghanliang.jpg","http://imgstatic.baidu.com/img/image/shouye/xiezhen.jpg","http://imgstatic.baidu.com/img/image/shouye/yiping3.jpg"
        };
   //给照片添加文字显示(Title)
-  private String[] mTitleValues = { "家电产品", "图书产品", "衣服产品", "笔记本产品", "数码产品",
-      "家具产品", "手机产品", "护肤产品" };
+  private String[] mTitleValues = { "家电分店", "图书分店", "衣服分店", "笔记本分店", "数码分店",
+      "家具分店", "手机分店", "护肤分店" };
   
   private String[] mContentValues={"家电/生活电器/厨房电器", "电子书/图书/小说","男装/女装/童装", "笔记本/笔记本配件/产品外设", "摄影摄像/数码配件", 
       "家具/灯具/生活用品", "手机通讯/运营商/手机配件", "面部护理/口腔护理/..."};

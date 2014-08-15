@@ -50,7 +50,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
 	private static final int UPLOAD_IN_PROCESS = 5;
 
 	private static String requestURL = "http://***.***.***.***:8080/***/***";
-	private Button selectButton,uploadButton,backBtn, modifyBtn;
+	private Button selectButton,uploadButton,backBtn, modifyBtn, delActivityBtn;
 	private ImageView imageView;
 	private TextView uploadImageResult;
 	private ProgressBar progressBar;
@@ -92,8 +92,21 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
           }
         });
       
-        Intent intent = getIntent();
-        String activityId = intent.getStringExtra("ActivityId");
+        
+        delActivityBtn.setOnClickListener(new OnClickListener() { 
+          public void onClick(View v) { 
+            Intent intent = getIntent();
+            String activityId = intent.getStringExtra("ActivityId");
+            Intent mineIntent = new Intent();         
+            mineIntent.putExtra("activityId", activityId);  
+            mineIntent = new Intent(ModifySpecificActivity.this, ManageActivity.class);
+            startActivity(mineIntent);
+            ModifySpecificActivity.this.finish();
+            Toast.makeText(ModifySpecificActivity.this, "删除成功", 1).show();
+           }
+         });
+        
+
     }
     
     /**
@@ -106,6 +119,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         uploadButton.setOnClickListener(this);
         modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
         backBtn = (Button) this.findViewById(R.id.main_top_back);
+        delActivityBtn = (Button) this.findViewById(R.id.main_top_minus);
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);

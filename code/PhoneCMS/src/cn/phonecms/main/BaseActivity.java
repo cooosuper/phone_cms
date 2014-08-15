@@ -42,10 +42,35 @@ public class BaseActivity extends Activity {
      popupWindow.dismiss();
      }
    });
+   
+   subcompanyManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+
+     forward(ManageSubCompany.class);
+     System.out.println("分店管理操作");
+
+     popupWindow.dismiss();
+     }
+   });
+
+   recruitManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+
+     forward(ManageRecruit.class);
+     System.out.println("招聘管理操作");
+
+     popupWindow.dismiss();
+     }
+   });
+   
    // 分店管理
    subcompanyManage.setOnClickListener(new OnClickListener() {
      @Override
      public void onClick(View v) {
+       
+       forward(ManageSubCompany.class);
        System.out.println("分店管理操作");
        popupWindow.dismiss();
      }
@@ -54,6 +79,7 @@ public class BaseActivity extends Activity {
    recruitManage.setOnClickListener(new OnClickListener() {
      @Override
      public void onClick(View v) {
+       forward(ManageRecruit.class);
        System.out.println("招聘操作");
        popupWindow.dismiss();
      }

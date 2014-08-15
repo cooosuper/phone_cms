@@ -8,57 +8,55 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 
-public class ViewSpecificActivity extends BaseActivity{
+public class ViewSpecificSubCompany extends BaseActivity{
 
   private ImageView imageView;
-  private Button backBtn,modifyActivityBtn,deleteActivityBtn;
+  private Button backBtn,modifySubcompanyBtn,deleteSubcompanyBtn;
 
   
   /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_view_specific_activity);
+      setContentView(R.layout.activity_view_specific_subcompany);
       initView();
       
       Intent intent = getIntent();
-      String ActivityId = intent.getStringExtra("ActivityId");
+      String subcompanyId = intent.getStringExtra("SubcompanyId");
       
-      final String ReceivedActivityId = ActivityId;
+      final String ReceivedSubcompanyId = subcompanyId;
       
       backBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ViewSpecificActivity.this, ManageActivity.class);
+          myIntent = new Intent(ViewSpecificSubCompany.this, ManageSubCompany.class);
           startActivity(myIntent);
-          ViewSpecificActivity.this.finish();
+          ViewSpecificSubCompany.this.finish();
         }
       });
       
-      modifyActivityBtn.setOnClickListener(new OnClickListener() { 
+      modifySubcompanyBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent.putExtra("ActivityId", ReceivedActivityId);
-          myIntent = new Intent(ViewSpecificActivity.this, ModifySpecificActivity.class);
+          myIntent.putExtra("SubcompanyId", ReceivedSubcompanyId);
+          myIntent = new Intent(ViewSpecificSubCompany.this, ModifySpecificSubCompany.class);
           startActivity(myIntent);
-          ViewSpecificActivity.this.finish();
+          ViewSpecificSubCompany.this.finish();
         }
       });
       
-      deleteActivityBtn.setOnClickListener(new OnClickListener() { 
+      deleteSubcompanyBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent.putExtra("ActivityId", ReceivedActivityId);
-          myIntent = new Intent(ViewSpecificActivity.this, ManageActivity.class);
+          myIntent.putExtra("SubcompanyId", ReceivedSubcompanyId);
+          myIntent = new Intent(ViewSpecificSubCompany.this, ManageProduct.class);
           startActivity(myIntent);
-          ViewSpecificActivity.this.finish();
-          Toast.makeText(ViewSpecificActivity.this, "删除成功", 1).show();
+          ViewSpecificSubCompany.this.finish();
+          Toast.makeText(ViewSpecificSubCompany.this, "删除成功", 1).show();
         }
       });
   }
@@ -67,8 +65,8 @@ public class ViewSpecificActivity extends BaseActivity{
 
     imageView = (ImageView) this.findViewById(R.id.app_image_btn);
     backBtn = (Button)findViewById(R.id.main_top_back);
-    modifyActivityBtn = (Button)findViewById(R.id.main_top_modify);
-    deleteActivityBtn = (Button)findViewById(R.id.main_top_minus);
+    modifySubcompanyBtn = (Button)findViewById(R.id.main_top_modify);
+    deleteSubcompanyBtn = (Button)findViewById(R.id.main_top_minus);
 
 }
   

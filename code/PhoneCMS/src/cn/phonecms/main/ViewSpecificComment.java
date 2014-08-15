@@ -1,22 +1,20 @@
 package cn.phonecms.main;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.Toast;
 
 
 
 public class ViewSpecificComment extends BaseActivity{
 
   private ImageView imageView;
-  private Button backBtn,modifyCommentBtn,deleteCommentBtn;
+  private Button backBtn,modifyCommentBtn,deleteCommentBtn,addCommentForSpecificBtn;
 
   
   /** Called when the activity is first created. */
@@ -34,7 +32,7 @@ public class ViewSpecificComment extends BaseActivity{
       backBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ViewSpecificComment.this, ManageProduct.class);
+          myIntent = new Intent(ViewSpecificComment.this, ManageComment.class);
           startActivity(myIntent);
           ViewSpecificComment.this.finish();
         }
@@ -47,6 +45,18 @@ public class ViewSpecificComment extends BaseActivity{
           myIntent = new Intent(ViewSpecificComment.this, ModifySpecificComment.class);
           startActivity(myIntent);
           ViewSpecificComment.this.finish();
+          Toast.makeText(ViewSpecificComment.this, "修改成功", 1).show();
+        }
+      });
+      
+      deleteCommentBtn.setOnClickListener(new OnClickListener() { 
+        public void onClick(View v) { 
+          Intent myIntent = new Intent();
+          myIntent.putExtra("CommentId", ReceivedActivityId);
+          myIntent = new Intent(ViewSpecificComment.this, ManageComment.class);
+          startActivity(myIntent);
+          ViewSpecificComment.this.finish();
+          Toast.makeText(ViewSpecificComment.this, "删除成功", 1).show();
         }
       });
   }
@@ -57,6 +67,7 @@ public class ViewSpecificComment extends BaseActivity{
     backBtn = (Button)findViewById(R.id.main_top_back);
     modifyCommentBtn = (Button)findViewById(R.id.main_top_modify);
     deleteCommentBtn = (Button)findViewById(R.id.main_top_minus);
+    addCommentForSpecificBtn = (Button)findViewById(R.id.app_blog_btn_comment);
 
 }
   
