@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout 
+	android:orientation="vertical" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	<include layout="@layout/main_top_1" />
+	
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">
+			
+		    <TextView 
+				android:layout_width="wrap_content" 
+				android:textAppearance="?android:attr/textAppearanceLarge" 
+				android:layout_height="wrap_content" 
+				android:layout_gravity="center_horizontal" 
+				android:text="分店" 
+				android:layout_margin="20dip" 
+				android:textSize="10pt"/>
+		    <RelativeLayout 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+			    <ImageView 
+			       android:id="@+id/app_image_btn"
+			       android:layout_width="100dip"    
+		           android:layout_height="100dip" 
+		           android:layout_centerVertical="true"
+		           android:layout_centerHorizontal="true"
+		           android:src="@drawable/ic_launcher"/> 		        
+		        
+		   </RelativeLayout> 
+		</LinearLayout>
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">	    
+		      <TextView
+			        android:id="@+id/uploadImageResult"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="" />	    
+		</LinearLayout>	
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical"
+			>			
+		    <RelativeLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="52dp" >
+		        <TextView
+		            android:id="@+id/textView1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:layout_centerVertical="true"
+		            android:layout_marginLeft="30dp"
+		            android:text="联系电话"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:textSize="7pt" />
+		        <TextView
+		            android:id="@+id/app_subcompany_contactNumber"
+		            android:layout_width="150dip"
+		            android:layout_height="40dip"
+		            android:layout_alignParentBottom="true"
+		            android:layout_marginLeft="32dp"
+		            android:layout_toRightOf="@+id/textView1"
+		            android:layout_weight="1" />
+		    </RelativeLayout>
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="49dp" >
+			    <TextView
+			        android:id="@+id/textView2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:layout_centerVertical="true"
+			        android:layout_marginLeft="29dp"
+			        android:text="联系地址"
+			        android:textAppearance="?android:attr/textAppearanceLarge"
+			        android:textSize="7pt" />
+			    <TextView
+			        android:id="@+id/app_subcompany_address"
+			        android:layout_width="150dip"
+			        android:layout_height="40dip"
+			        android:layout_centerVertical="true"
+			        android:layout_marginLeft="30dp"
+			        android:layout_toRightOf="@+id/textView2"
+			        android:layout_weight="1"
+			        android:inputType="textPassword" />
+			</RelativeLayout>
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="54dp" >
+			    <TextView
+			        android:id="@+id/textView3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:layout_centerVertical="true"
+			        android:layout_marginLeft="30dp"
+			        android:text="传真号码"
+			        android:textAppearance="?android:attr/textAppearanceLarge"
+			        android:textSize="7pt" />
+			    <TextView
+			        android:id="@+id/app_subcompany_fax"
+			        android:layout_width="150dip"
+			        android:layout_height="40dip"
+			        android:layout_centerVertical="true"
+			        android:layout_marginLeft="31dp"
+			        android:layout_toRightOf="@+id/textView3"
+			        android:layout_weight="1"
+			        android:inputType="textPassword" />
+			</RelativeLayout>
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" >
+			    <TextView
+			        android:id="@+id/textView4"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:layout_centerVertical="true"
+			        android:layout_marginLeft="30dp"
+			        android:text="邮箱地址"
+			        android:textAppearance="?android:attr/textAppearanceLarge"
+			        android:textSize="7pt" />
+			    <TextView
+			        android:id="@+id/app_subcompany_email"
+			        android:layout_width="150dip"
+			        android:layout_height="40dip"
+			        android:layout_alignParentTop="true"
+			        android:layout_marginLeft="28dp"
+			        android:layout_toRightOf="@+id/textView4"
+			        android:layout_weight="1"
+			        android:inputType="textPassword" />
+			</RelativeLayout>
+		</LinearLayout>
+		<WebView android:id="@+id/web_map" 
+	        android:layout_height="fill_parent" 
+	        android:layout_weight="1" 
+	        android:layout_width="fill_parent" />
+		<include layout="@layout/main_tab" />
+</LinearLayout>
+</merge>
