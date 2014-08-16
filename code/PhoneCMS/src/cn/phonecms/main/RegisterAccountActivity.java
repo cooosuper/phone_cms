@@ -100,48 +100,53 @@ public class RegisterAccountActivity extends Activity
       public void onClick(View v) 
       {
         
-        if(!checkEdit()){
-          return;
-        }
+//        if(!checkEdit()){
+//          return;
+//        }
+//        
+//        StringRequest stringRequest = new StringRequest(Method.POST,"http://www.***.com",  
+//            new Response.Listener<String>() {  
+//                @Override  
+//                public void onResponse(String response) {  
+//                    Log.d("TAG", response); 
+//                    Intent intent = new Intent();
+//                    intent.putExtra("testIntent", "register_successed");
+//                    intent.setClass(RegisterAccountActivity.this, RegisterAccountSuccessActivity.class);
+//                    RegisterAccountActivity.this.startActivity(intent);
+//                }  
+//            }, new Response.ErrorListener() {  
+//                @Override  
+//                public void onErrorResponse(VolleyError error) {  
+//                    Log.e("TAG", error.getMessage(), error); 
+//                    Toast.makeText(RegisterAccountActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
+//                }  
+//            }){
+//                protected Map<String,String> getParams()
+//                {
+//                  Map<String,String> params = new HashMap<String, String>();       
+//                  params.put("username", registerUsername.getText().toString().trim());  
+//                  params.put("password", registerPasswd.getText().toString().trim());
+//                  params.put("phone", registerPhone.getText().toString().trim());
+//                  params.put("mail", registerMail.getText().toString().trim());
+//                  params.put("address", registerAddress.getText().toString().trim());
+//                  return params;
+//                }
+//                
+//                public Map<String, String> getHeaders() throws AuthFailureError 
+//                {
+//                  Map<String,String> params = new HashMap<String, String>();
+//                  params.put("Content-Type","application/x-www-form-urlencoded");
+//                  return params;
+//                
+//                }
+//            };
+//
+//            mQueue.add(stringRequest);
         
-        StringRequest stringRequest = new StringRequest(Method.POST,"http://www.***.com",  
-            new Response.Listener<String>() {  
-                @Override  
-                public void onResponse(String response) {  
-                    Log.d("TAG", response); 
-                    Intent intent = new Intent();
-                    intent.putExtra("testIntent", "register_successed");
-                    intent.setClass(RegisterAccountActivity.this, RegisterAccountSuccessActivity.class);
-                    RegisterAccountActivity.this.startActivity(intent);
-                }  
-            }, new Response.ErrorListener() {  
-                @Override  
-                public void onErrorResponse(VolleyError error) {  
-                    Log.e("TAG", error.getMessage(), error); 
-                    Toast.makeText(RegisterAccountActivity.this, "注册失败", Toast.LENGTH_SHORT).show();
-                }  
-            }){
-                protected Map<String,String> getParams()
-                {
-                  Map<String,String> params = new HashMap<String, String>();       
-                  params.put("username", registerUsername.getText().toString().trim());  
-                  params.put("password", registerPasswd.getText().toString().trim());
-                  params.put("phone", registerPhone.getText().toString().trim());
-                  params.put("mail", registerMail.getText().toString().trim());
-                  params.put("address", registerAddress.getText().toString().trim());
-                  return params;
-                }
-                
-                public Map<String, String> getHeaders() throws AuthFailureError 
-                {
-                  Map<String,String> params = new HashMap<String, String>();
-                  params.put("Content-Type","application/x-www-form-urlencoded");
-                  return params;
-                
-                }
-            };
-
-            mQueue.add(stringRequest);
+        Intent intent = new Intent();
+        intent.putExtra("testIntent", "register_successed");
+        intent.setClass(RegisterAccountActivity.this, RegisterAccountSuccessActivity.class);
+        RegisterAccountActivity.this.startActivity(intent);
       }     
     });
   }
