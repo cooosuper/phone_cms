@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout 
+	android:orientation="vertical" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	<include layout="@layout/main_top_2" />
+	
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">
+
+		    <RelativeLayout 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:layout_marginTop="60dip"
+				>
+			    <ImageView 
+			       android:id="@+id/app_image_btn"
+			       android:layout_width="100dip"    
+		           android:layout_height="100dip" 
+		           android:layout_centerVertical="true"
+		           android:layout_centerHorizontal="true"
+		           android:src="@drawable/ic_launcher"/> 
+		        <Button 
+					android:id="@+id/app_selectImage_btn" 
+					android:layout_width="35dip" 
+					android:layout_height="wrap_content" 
+					android:layout_centerVertical="true"
+					android:text="选图" 
+					android:layout_toRightOf="@id/app_image_btn"
+					android:background="@drawable/module_back"/>
+		        <Button 
+					android:id="@+id/app_uploadImage_btn" 
+					android:layout_width="35dip" 
+					android:layout_height="wrap_content" 
+					android:layout_centerVertical="true"
+					android:text="上传" 
+					android:layout_toRightOf="@id/app_selectImage_btn"
+					android:background="@drawable/module_back"/>
+		   </RelativeLayout> 
+
+		</LinearLayout>
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">
+		    
+		      <TextView
+			        android:id="@+id/uploadImageResult"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="" />
+		    
+		</LinearLayout>		
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical">
+		    
+		   <ProgressBar
+		        android:layout_marginLeft="10dip"
+		        android:layout_marginRight="10dip"
+		        android:id="@+id/progressBar1"
+		        style="?android:attr/progressBarStyleHorizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" />
+		    
+		</LinearLayout>
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:orientation="vertical"
+			android:layout_marginTop="50dip">
+		   	<RelativeLayout 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+				<EditText 
+					android:layout_weight="1" 
+					android:layout_width="150dip" 
+					android:layout_height="40dip" 
+					android:id="@+id/app_subcompany_contactNumber" 
+					android:layout_gravity="center_horizontal"
+					android:layout_marginLeft="160dip"/>
+
+				<TextView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignBaseline="@+id/app_subcompany_contactNumber"
+				    android:layout_alignBottom="@+id/app_subcompany_contactNumber"
+				    android:layout_alignParentLeft="true"
+				    android:layout_gravity="center_horizontal"
+				    android:layout_marginLeft="27dp"
+				    android:text="联系电话"
+				    android:textAppearance="?android:attr/textAppearanceLarge"
+				    android:textSize="7pt" />
+			</RelativeLayout>			
+		    <RelativeLayout 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+				<EditText 
+					android:layout_weight="1" 
+					android:layout_width="150dip" 
+					android:layout_height="40dip" 
+					android:id="@+id/app_subcompany_address" 
+					android:layout_gravity="center_horizontal"
+					android:layout_marginLeft="160dip"/>
+
+				<TextView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignBaseline="@+id/app_subcompany_address"
+				    android:layout_alignBottom="@+id/app_subcompany_address"
+				    android:layout_alignParentLeft="true"
+				    android:layout_gravity="center_horizontal"
+				    android:layout_marginLeft="27dp"
+				    android:text="联系地址"
+				    android:textAppearance="?android:attr/textAppearanceLarge"
+				    android:textSize="7pt" />
+
+			</RelativeLayout>			
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" >
+
+				<TextView 
+					android:layout_width="wrap_content" 
+					android:textAppearance="?android:attr/textAppearanceLarge" 
+					android:layout_height="wrap_content" 
+					android:layout_marginLeft="27dp"
+					android:text="传真号码" 
+					android:textSize="7pt" 
+					android:layout_marginTop="5dip"/>
+				<EditText 
+					android:layout_weight="1" 
+					android:layout_width="150dip" 
+					android:layout_height="40dip" 
+					android:id="@+id/app_subcompany_fax" 
+					android:layout_marginLeft="160dip"/>
+					
+			</RelativeLayout>	
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" >
+
+				<TextView 
+					android:layout_width="wrap_content" 
+					android:textAppearance="?android:attr/textAppearanceLarge" 
+					android:layout_height="wrap_content" 
+					android:layout_marginLeft="27dp"
+					android:text="邮箱地址" 
+					android:textSize="7pt" 
+					android:layout_marginTop="5dip"/>
+				<EditText 
+					android:layout_weight="1" 
+					android:layout_width="150dip" 
+					android:layout_height="40dip" 
+					android:id="@+id/app_subcompany_email" 
+					android:layout_marginLeft="160dip"/>
+					
+			</RelativeLayout>
+			
+		</LinearLayout>	
+</LinearLayout>
+</merge>
