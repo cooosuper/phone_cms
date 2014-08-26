@@ -21,87 +21,93 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.phonecms.main.network.UploadUtil;
-import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
+import cn.phonecms.network.UploadUtil;
+import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
-public class AddProduct extends Activity implements OnClickListener,OnUploadProcessListener{
+public class AddSubCompanyActivity extends Activity implements OnClickListener,OnUploadProcessListener
+{
   private static final String TAG = "uploadImage";
   
-  /*** 去上传文件*/
+  /*** 去上传文件  */
   protected static final int TO_UPLOAD_FILE = 1;  
-  /*** 上传文件响应 */
+  /*** 上传文件响应  */
   protected static final int UPLOAD_FILE_DONE = 2;  //
-  /*** 选择文件*/
+  /*** 选择文件  */
   public static final int TO_SELECT_PHOTO = 3;
-  /*** 上传初始化*/
+  /*** 上传初始化  */
   private static final int UPLOAD_INIT_PROCESS = 4;
-  /*** 上传中*/
+  /*** 上传中  */
   private static final int UPLOAD_IN_PROCESS = 5;
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
   private Button selectButton,uploadButton,backBtn,addBtn;
+  
   private ImageView imageView;
   private TextView uploadImageResult;
   private ProgressBar progressBar;
   private String picPath = null;
   private ProgressDialog progressDialog;
   
-  private String productName, productPrice, productDesc;
-  private EditText appProductName, appProductPrice, appProductdesc;
-  private int productImage;
+  private String subcompanyContact, subcompanyAddress, subcompanyFax, subcompanyEmail;
+  private EditText appSubcompanyContact, appSubcompanyAddress, appSubcompanyFax, appSubcompanyEmail;
   
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_add_subcompany);
         initView();
-        
+
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-            Intent myIntent = new Intent();
-            myIntent = new Intent(AddProduct.this, ManageProduct.class);
-            startActivity(myIntent);
-            AddProduct.this.finish();
+          Intent myIntent = new Intent();
+          myIntent = new Intent(AddSubCompanyActivity.this, ManageSubCompanyActivity.class);
+          startActivity(myIntent);
+          AddSubCompanyActivity.this.finish();
           }
         });
         
         addBtn.setOnClickListener(new OnClickListener(){
           public void onClick(View v) { 
-            Intent myIntent = new Intent();
-            myIntent.putExtra("productName", productName);
-            myIntent.putExtra("productPrice",productPrice);
-            myIntent.putExtra("productDesc",productDesc);
-            myIntent.putExtra("productImage",productImage);  
-            myIntent = new Intent(AddProduct.this, ManageProduct.class);
-            startActivity(myIntent);
-            AddProduct.this.finish();
-            Toast.makeText(AddProduct.this, "添加成功", 1).show();
+            Intent mineIntent = new Intent();         
+            mineIntent.putExtra("subcompanyContact", subcompanyContact);
+            mineIntent.putExtra("subcompanyAddress",subcompanyAddress);
+            mineIntent.putExtra("subcompanyFax",subcompanyFax);
+            mineIntent.putExtra("subcompanyEmail",subcompanyEmail);
+            mineIntent = new Intent(AddSubCompanyActivity.this, ManageSubCompanyActivity.class);
+            startActivity(mineIntent);
+            AddSubCompanyActivity.this.finish();
+            Toast.makeText(AddSubCompanyActivity.this, "添加成功", 1).show();
           }
         });
     }
     
-    /*** 初始化数据 */
+    /**
+     * 初始化数据
+     */
   private void initView() {
         selectButton = (Button) this.findViewById(R.id.app_selectImage_btn);
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
+        addBtn = (Button) this.findViewById(R.id.main_subcompany_top_add);
+        backBtn = (Button) this.findViewById(R.id.main_subcompany_top_back);
+        
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         
-        backBtn = (Button) this.findViewById(R.id.main_top_back);
-        addBtn = (Button) this.findViewById(R.id.main_top_add);
-        appProductName = (EditText)findViewById(R.id.app_product_name);
-        appProductPrice = (EditText)findViewById(R.id.app_product_price);
-        appProductdesc = (EditText)findViewById(R.id.app_product_desc);
+        appSubcompanyContact = (EditText)findViewById(R.id.app_subcompany_contactNumber);
+        appSubcompanyAddress = (EditText)findViewById(R.id.app_subcompany_address);
+        appSubcompanyFax = (EditText)findViewById(R.id.app_subcompany_fax);
+        appSubcompanyEmail = (EditText)findViewById(R.id.app_subcompany_email);
         
-        productName = appProductName.getText().toString();
-        productPrice = appProductPrice.getText().toString();
-        productDesc =  appProductdesc.getText().toString();
-        productImage = imageView.getId();
+        subcompanyContact = appSubcompanyContact.getText().toString();
+        subcompanyAddress = appSubcompanyAddress.getText().toString();
+        subcompanyFax =  appSubcompanyFax.getText().toString();
+        subcompanyEmail = appSubcompanyEmail.getText().toString();
+
   }
 
   @Override
@@ -136,7 +142,9 @@ public class AddProduct extends Activity implements OnClickListener,OnUploadProc
     super.onActivityResult(requestCode, resultCode, data);
   }
   
-  /*** 上传服务器响应回调 */
+  /**
+   * 上传服务器响应回调
+   */
   @Override
   public void onUploadDone(int responseCode, String message) {
     progressDialog.dismiss();

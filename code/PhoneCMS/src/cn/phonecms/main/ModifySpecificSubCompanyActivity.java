@@ -21,10 +21,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.phonecms.main.network.UploadUtil;
-import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
+import cn.phonecms.network.UploadUtil;
+import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
-public class ModifySpecificProduct extends Activity implements OnClickListener,OnUploadProcessListener
+public class ModifySpecificSubCompanyActivity extends Activity implements OnClickListener,OnUploadProcessListener
 {
   private static final String TAG = "uploadImage";
   
@@ -47,50 +47,49 @@ public class ModifySpecificProduct extends Activity implements OnClickListener,O
   private String picPath = null;
   private ProgressDialog progressDialog;
   
-  private String productName, productPrice, productDesc;
-  private EditText appProductName, appProductPrice, appProductdesc;
-  private int productImage;
+  private String subcompanyContact, subcompanyAddress, subcompanyFax, subcompanyEmail;
+  private EditText appSubcompanyContact, appSubcompanyAddress, appSubcompanyFax, appSubcompanyEmail;
   
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modify_specific_product);
+        setContentView(R.layout.activity_modify_specific_subcompany);
         initView();
 
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ModifySpecificProduct.this, ViewSpecificProduct.class);
+          myIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
           startActivity(myIntent);
-          ModifySpecificProduct.this.finish();
+          ModifySpecificSubCompanyActivity.this.finish();
           }
         });
         
         modifyBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
            Intent mineIntent = new Intent();         
-           mineIntent.putExtra("productName", productName);
-           mineIntent.putExtra("productPrice",productPrice);
-           mineIntent.putExtra("productDesc",productDesc);
-           mineIntent.putExtra("productImage",productImage);   
-           mineIntent = new Intent(ModifySpecificProduct.this, ManageProduct.class);
+           mineIntent.putExtra("subcompanyContact", subcompanyContact);
+           mineIntent.putExtra("subcompanyAddress",subcompanyAddress);
+           mineIntent.putExtra("subcompanyFax",subcompanyFax);
+           mineIntent.putExtra("subcompanyEmail",subcompanyEmail);
+           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
            startActivity(mineIntent);
-           ModifySpecificProduct.this.finish();
-           Toast.makeText(ModifySpecificProduct.this, "修改成功", 1).show();
+           ModifySpecificSubCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificSubCompanyActivity.this, "修改成功", 1).show();
           }
         });
         
         delProductBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) {               
            Intent intent = getIntent();
-           String productId = intent.getStringExtra("ProductId");
+           String subcompanyId = intent.getStringExtra("SubCompanyId");
            Intent mineIntent = new Intent(); 
-           mineIntent.putExtra("productId", productId);
-           mineIntent = new Intent(ModifySpecificProduct.this, ManageProduct.class);
+           mineIntent.putExtra("subcompanyId", subcompanyId);
+           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
            startActivity(mineIntent);
-           ModifySpecificProduct.this.finish();
-           Toast.makeText(ModifySpecificProduct.this, "删除成功", 1).show();
+           ModifySpecificSubCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificSubCompanyActivity.this, "删除成功", 1).show();
           }
         });
     }
@@ -112,13 +111,15 @@ public class ModifySpecificProduct extends Activity implements OnClickListener,O
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         
-        appProductName = (EditText)findViewById(R.id.app_product_name);
-        appProductPrice = (EditText)findViewById(R.id.app_product_price);
-        appProductdesc = (EditText)findViewById(R.id.app_product_desc);
+        appSubcompanyContact = (EditText)findViewById(R.id.app_subcompany_contactNumber);
+        appSubcompanyAddress = (EditText)findViewById(R.id.app_subcompany_address);
+        appSubcompanyFax = (EditText)findViewById(R.id.app_subcompany_fax);
+        appSubcompanyEmail = (EditText)findViewById(R.id.app_subcompany_email);
         
-        productName = appProductName.getText().toString();
-        productPrice = appProductPrice.getText().toString();
-        productDesc =  appProductdesc.getText().toString();
+        subcompanyContact = appSubcompanyContact.getText().toString();
+        subcompanyAddress = appSubcompanyAddress.getText().toString();
+        subcompanyFax =  appSubcompanyFax.getText().toString();
+        subcompanyEmail = appSubcompanyEmail.getText().toString();
 
   }
 

@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 
 
-public class ViewSpecificComment extends BaseActivity{
+public class ModifySpecificCommentActivity extends BaseActivity{
 
   private ImageView imageView;
   private Button backBtn,modifyCommentBtn,deleteCommentBtn,addCommentForSpecificBtn;
@@ -32,9 +32,9 @@ public class ViewSpecificComment extends BaseActivity{
       backBtn.setOnClickListener(new OnClickListener() { 
         public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ViewSpecificComment.this, ManageComment.class);
+          myIntent = new Intent(ModifySpecificCommentActivity.this, ManageCommentActivity.class);
           startActivity(myIntent);
-          ViewSpecificComment.this.finish();
+          ModifySpecificCommentActivity.this.finish();
         }
       });
       
@@ -42,10 +42,10 @@ public class ViewSpecificComment extends BaseActivity{
         public void onClick(View v) { 
           Intent myIntent = new Intent();
           myIntent.putExtra("CommentId", ReceivedActivityId);
-          myIntent = new Intent(ViewSpecificComment.this, ModifySpecificComment.class);
+          myIntent = new Intent(ModifySpecificCommentActivity.this, ManageCommentActivity.class);
           startActivity(myIntent);
-          ViewSpecificComment.this.finish();
-          Toast.makeText(ViewSpecificComment.this, "修改成功", 1).show();
+          ModifySpecificCommentActivity.this.finish();
+          Toast.makeText(ModifySpecificCommentActivity.this, "修改成功", 1).show();
         }
       });
       
@@ -53,10 +53,10 @@ public class ViewSpecificComment extends BaseActivity{
         public void onClick(View v) { 
           Intent myIntent = new Intent();
           myIntent.putExtra("CommentId", ReceivedActivityId);
-          myIntent = new Intent(ViewSpecificComment.this, ManageComment.class);
+          myIntent = new Intent(ModifySpecificCommentActivity.this, ManageCommentActivity.class);
           startActivity(myIntent);
-          ViewSpecificComment.this.finish();
-          Toast.makeText(ViewSpecificComment.this, "删除成功", 1).show();
+          ModifySpecificCommentActivity.this.finish();
+          Toast.makeText(ModifySpecificCommentActivity.this, "删除成功", 1).show();
         }
       });
   }

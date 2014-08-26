@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class ModifySpecificRecruit extends Activity
+public class ModifySpecificRecruitActivity extends Activity
 {
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
@@ -29,9 +29,9 @@ public class ModifySpecificRecruit extends Activity
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ModifySpecificRecruit.this, ViewSpecificRecruit.class);
+          myIntent = new Intent(ModifySpecificRecruitActivity.this, ManageRecruitActivity.class);
           startActivity(myIntent);
-          ModifySpecificRecruit.this.finish();
+          ModifySpecificRecruitActivity.this.finish();
           }
         });
         
@@ -43,10 +43,10 @@ public class ModifySpecificRecruit extends Activity
            mineIntent.putExtra("recruitSalary",recruitSalary);
            mineIntent.putExtra("recruitQualifications",recruitQualifications);
            mineIntent.putExtra("jobDesc",jobDesc);
-           mineIntent = new Intent(ModifySpecificRecruit.this, ManageRecruit.class);
+           mineIntent = new Intent(ModifySpecificRecruitActivity.this, ManageRecruitActivity.class);
            startActivity(mineIntent);
-           ModifySpecificRecruit.this.finish();
-           Toast.makeText(ModifySpecificRecruit.this, "修改成功", 1).show();
+           ModifySpecificRecruitActivity.this.finish();
+           Toast.makeText(ModifySpecificRecruitActivity.this, "修改成功", 1).show();
           }
         });
         
@@ -56,10 +56,10 @@ public class ModifySpecificRecruit extends Activity
            String subcompanyId = intent.getStringExtra("SubCompanyId");
            Intent mineIntent = new Intent(); 
            mineIntent.putExtra("subcompanyId", subcompanyId);
-           mineIntent = new Intent(ModifySpecificRecruit.this, ManageSubCompany.class);
+           mineIntent = new Intent(ModifySpecificRecruitActivity.this, ManageSubCompanyActivity.class);
            startActivity(mineIntent);
-           ModifySpecificRecruit.this.finish();
-           Toast.makeText(ModifySpecificRecruit.this, "删除成功", 1).show();
+           ModifySpecificRecruitActivity.this.finish();
+           Toast.makeText(ModifySpecificRecruitActivity.this, "删除成功", 1).show();
           }
         });
     }

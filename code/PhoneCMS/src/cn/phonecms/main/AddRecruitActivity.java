@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 
 
-public class AddRecruit extends Activity{
+public class AddRecruitActivity extends Activity{
 
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
@@ -30,9 +30,9 @@ public class AddRecruit extends Activity{
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
             Intent myIntent = new Intent();
-            myIntent = new Intent(AddRecruit.this, ManageRecruit.class);
+            myIntent = new Intent(AddRecruitActivity.this, ManageRecruitActivity.class);
             startActivity(myIntent);
-            AddRecruit.this.finish();
+            AddRecruitActivity.this.finish();
           }
         });
         
@@ -44,18 +44,18 @@ public class AddRecruit extends Activity{
             mineIntent.putExtra("recruitSalary",recruitSalary);
             mineIntent.putExtra("recruitQualifications",recruitQualifications);
             mineIntent.putExtra("jobDesc",jobDesc);
-            mineIntent = new Intent(AddRecruit.this, ManageRecruit.class);
+            mineIntent = new Intent(AddRecruitActivity.this, ManageRecruitActivity.class);
             startActivity(mineIntent);
-            AddRecruit.this.finish();
-            Toast.makeText(AddRecruit.this, "添加成功", 1).show();
+            AddRecruitActivity.this.finish();
+            Toast.makeText(AddRecruitActivity.this, "添加成功", 1).show();
           }
         });
     } 
   
     private void initView() {
   
-      addBtn  = (Button) this.findViewById(R.id.main_top_add);
-      backBtn = (Button) this.findViewById(R.id.main_top_back);
+      addBtn  = (Button) this.findViewById(R.id.main_recruit_top_add);
+      backBtn = (Button) this.findViewById(R.id.main_recruit_top_back);
       
       appRecruitJob             = (EditText)findViewById(R.id.app_recruit_job);
       appRecruitNumbers         = (EditText)findViewById(R.id.app_recruit_numbers);

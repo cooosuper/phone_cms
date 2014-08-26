@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class ModifySpecificCompany extends BaseActivity implements OnClickListener
+public class ModifySpecificCompanyActivity extends BaseActivity implements OnClickListener
 {
   private static final String TAG = "uploadImage";
   
@@ -37,29 +37,29 @@ public class ModifySpecificCompany extends BaseActivity implements OnClickListen
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(ModifySpecificCompany.this, ManageCompany.class);
+          myIntent = new Intent(ModifySpecificCompanyActivity.this, ManageCompanyActivity.class);
           startActivity(myIntent);
-          ModifySpecificCompany.this.finish();
+          ModifySpecificCompanyActivity.this.finish();
           }
         });
         
         modifyBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
            Intent mineIntent = new Intent();         
-           mineIntent = new Intent(ModifySpecificCompany.this, ManageCompany.class);
+           mineIntent = new Intent(ModifySpecificCompanyActivity.this, ManageCompanyActivity.class);
            startActivity(mineIntent);
-           ModifySpecificCompany.this.finish();
-           Toast.makeText(ModifySpecificCompany.this, "修改成功", 1).show();
+           ModifySpecificCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificCompanyActivity.this, "修改成功", 1).show();
           }
         });
         
         delCompanyButton.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
            Intent mineIntent = new Intent();         
-           mineIntent = new Intent(ModifySpecificCompany.this, ManageCompany.class);
+           mineIntent = new Intent(ModifySpecificCompanyActivity.this, ManageCompanyActivity.class);
            startActivity(mineIntent);
-           ModifySpecificCompany.this.finish();
-           Toast.makeText(ModifySpecificCompany.this, "删除成功", 1).show();
+           ModifySpecificCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificCompanyActivity.this, "删除成功", 1).show();
           }
         });
       
