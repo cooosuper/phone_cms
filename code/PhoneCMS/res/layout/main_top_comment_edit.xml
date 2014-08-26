@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="fill_parent"
+	android:layout_height="38dip"
+	android:gravity="center_vertical"
+	>
+	<Button 
+		android:id="@+id/main_top_minus" 
+		android:layout_width="34dip" 
+		android:layout_height="38dip" 
+		android:layout_alignParentRight="true" 
+		android:background="@drawable/module_back"
+		android:text="X"  />
+	<Button 
+		android:id="@+id/main_top_modify" 
+		android:layout_width="34dip" 
+		android:layout_height="38dip" 
+		android:layout_toLeftOf="@id/main_top_minus"
+		android:background="@drawable/module_back"
+		android:text="修改"  />
+
+	<Button
+	    android:id="@+id/main_top_back"
+	    android:layout_width="60dip"
+	    android:layout_height="38dip"
+	    android:layout_alignParentLeft="true"
+	    android:text="后退" />
+
+	<TextView
+	    android:id="@+id/main_top_title"
+	    android:layout_width="fill_parent"
+	    android:layout_height="38dip"
+	    android:layout_centerVertical="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:ellipsize="marquee"
+	    android:gravity="center"
+	    android:singleLine="true"
+	    android:text="评论管理"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
