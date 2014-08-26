@@ -21,8 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.phonecms.main.network.UploadUtil;
-import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
+import cn.phonecms.network.UploadUtil;
+import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
 public class ModifySpecificActivity extends Activity implements OnClickListener,OnUploadProcessListener
 {
@@ -50,7 +50,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
 	private static final int UPLOAD_IN_PROCESS = 5;
 
 	private static String requestURL = "http://***.***.***.***:8080/***/***";
-	private Button selectButton,uploadButton,backBtn, modifyBtn, delActivityBtn;
+	private Button selectButton,uploadButton,backActivityBtn, modifyBtn, delActivityBtn;
 	private ImageView imageView;
 	private TextView uploadImageResult;
 	private ProgressBar progressBar;
@@ -68,10 +68,11 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         setContentView(R.layout.activity_modify_specific_activity);
         initView();
         
-        backBtn.setOnClickListener(new OnClickListener() { 
+        backActivityBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
+          Toast.makeText(ModifySpecificActivity.this, "**********功", 1).show();
           Intent myIntent = new Intent();
-          myIntent = new Intent(ModifySpecificActivity.this, ViewSpecificActivity.class);
+          myIntent = new Intent(ModifySpecificActivity.this, ManageActivity.class);
           startActivity(myIntent);
           ModifySpecificActivity.this.finish();
           }
@@ -88,7 +89,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
            mineIntent = new Intent(ModifySpecificActivity.this, ManageActivity.class);
            startActivity(mineIntent);
            ModifySpecificActivity.this.finish();
-           Toast.makeText(ModifySpecificActivity.this, "修改成功", 1).show();
+           Toast.makeText(ModifySpecificActivity.this, "修改活动成功", 1).show();
           }
         });
       
@@ -118,7 +119,7 @@ public class ModifySpecificActivity extends Activity implements OnClickListener,
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
         modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
-        backBtn = (Button) this.findViewById(R.id.main_top_back);
+        backActivityBtn = (Button) this.findViewById(R.id.main_activity_top_back);
         delActivityBtn = (Button) this.findViewById(R.id.main_top_minus);
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);

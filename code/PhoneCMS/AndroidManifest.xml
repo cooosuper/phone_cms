@@ -69,10 +69,6 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name="cn.phonecms.main.ModifySpecificActivity"
             android:label="@string/app_name" >
         </activity>
@@ -84,59 +80,47 @@
         
        <!-- Product Related Activities-->
        <activity
-            android:name="cn.phonecms.main.ManageProduct"
+            android:name="cn.phonecms.main.ManageProductActivity"
             android:label="@string/app_name" >
         </activity>
               <activity
-            android:name="cn.phonecms.main.AddProduct"
+            android:name="cn.phonecms.main.AddProductActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificProduct"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cn.phonecms.main.ModifySpecificProduct"
+            android:name="cn.phonecms.main.ModifySpecificProductActivity"
             android:label="@string/app_name" >
         </activity>
 
         <!-- Company Related Activities-->
        <activity
-            android:name="cn.phonecms.main.ManageCompany"
+            android:name="cn.phonecms.main.ManageCompanyActivity"
             android:label="@string/app_name" >
         </activity>
               <activity
-            android:name="cn.phonecms.main.AddCompany"
+            android:name="cn.phonecms.main.AddCompanyActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificCompany"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cn.phonecms.main.ModifySpecificCompany"
+            android:name="cn.phonecms.main.ModifySpecificCompanyActivity"
             android:label="@string/app_name" >
         </activity>
          <!-- Comment Related Activities-->
        <activity
-            android:name="cn.phonecms.main.ManageComment"
+            android:name="cn.phonecms.main.ManageCommentActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.AddComment"
+            android:name="cn.phonecms.main.AddCommentActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificComment"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cn.phonecms.main.ModifySpecificComment"
+            android:name="cn.phonecms.main.ModifySpecificCommentActivity"
             android:label="@string/app_name" >
         </activity>
         
         <activity
-            android:name="cn.phonecms.main.network.UploadUtil"
+            android:name="cn.phonecms.network.UploadUtil"
             android:label="@string/app_name" >
         </activity>
         <activity
@@ -146,36 +130,28 @@
         
          <!-- SubCompany Related Activities-->
          <activity
-            android:name="cn.phonecms.main.ManageSubCompany"
+            android:name="cn.phonecms.main.ManageSubCompanyActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificSubCompany"
+            android:name="cn.phonecms.main.AddSubCompanyActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.AddSubCompany"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cn.phonecms.main.ModifySpecificSubCompany"
+            android:name="cn.phonecms.main.ModifySpecificSubCompanyActivity"
             android:label="@string/app_name" >
         </activity>   
          <!-- Recruit Related Activities-->
          <activity
-            android:name="cn.phonecms.main.ManageRecruit"
+            android:name="cn.phonecms.main.ManageRecruitActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.ViewSpecificRecruit"
+            android:name="cn.phonecms.main.AddRecruitActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cn.phonecms.main.AddRecruit"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="cn.phonecms.main.ModifySpecificRecruit"
+            android:name="cn.phonecms.main.ModifySpecificRecruitActivity"
             android:label="@string/app_name" >
         </activity>
          

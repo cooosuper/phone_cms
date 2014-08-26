@@ -4,13 +4,45 @@
 	android:orientation="vertical" 
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent">
-	<include layout="@layout/main_top_2" />
+	<RelativeLayout  
+		android:layout_width="fill_parent"
+		android:layout_height="33dip"
+		android:gravity="center_vertical">
+		
+		<Button 
+			android:id="@+id/main_activity_top_add" 
+			android:layout_width="34dip" 
+			android:layout_height="33dip" 
+			android:layout_alignParentRight="true"
+			android:background="@drawable/module_back"
+			android:text="添加"  />
 	
-		<LinearLayout 
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" 
-			android:orientation="vertical">
-			
+		<Button
+		    android:id="@+id/main_activity_top_back"
+		    android:layout_width="60dip"
+		    android:layout_height="33dip"
+		    android:layout_alignParentLeft="true"
+		    android:background="@drawable/module_back"
+		    android:text="后退" />
+	
+		<TextView
+		    android:layout_width="fill_parent"
+		    android:layout_height="29dip"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentTop="true"
+		    android:layout_centerVertical="true"
+		    android:ellipsize="marquee"
+		    android:gravity="center"
+		    android:singleLine="true"
+		    android:text="添加活动"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />	
+	</RelativeLayout>
+	
+	<LinearLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:orientation="vertical">
+		
 		<LinearLayout 
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
@@ -27,7 +59,7 @@
 					android:id="@+id/app_activity_name" 
 					android:layout_gravity="center_horizontal"
 					android:layout_marginLeft="100dip"/>
-
+	
 				<TextView
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
@@ -39,51 +71,47 @@
 				    android:text="活动名称"
 				    android:textAppearance="?android:attr/textAppearanceLarge"
 				    android:textSize="7pt" />
-
+	
 			</RelativeLayout>
 		</LinearLayout>
-		    <RelativeLayout 
-				android:layout_width="fill_parent" 
-				android:layout_height="wrap_content"
-				>
-			    <ImageView 
-			       android:id="@+id/app_image_btn"
-			       android:layout_width="100dip"    
-		           android:layout_height="100dip" 
-		           android:layout_centerVertical="true"
-		           android:layout_centerHorizontal="true"
-		           /> 
-		        <Button 
-					android:id="@+id/app_selectImage_btn" 
-					android:layout_width="35dip" 
-					android:layout_height="wrap_content" 
-					android:layout_centerVertical="true"
-					android:text="选图" 
-					android:layout_toRightOf="@id/app_image_btn"
-					android:background="@drawable/module_back"/>
-		        <Button 
-					android:id="@+id/app_uploadImage_btn" 
-					android:layout_width="35dip" 
-					android:layout_height="wrap_content" 
-					android:layout_centerVertical="true"
-					android:text="上传" 
-					android:layout_toRightOf="@id/app_selectImage_btn"
-					android:background="@drawable/module_back"/>
-		   </RelativeLayout> 
-
-		</LinearLayout>
-		<LinearLayout 
+	    <RelativeLayout 
 			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" 
-			android:orientation="vertical">
-		    
-		      <TextView
-			        android:id="@+id/uploadImageResult"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:text="" />
-		    
-		</LinearLayout>
+			android:layout_height="wrap_content">
+		    <ImageView 
+		       android:id="@+id/app_image_btn"
+		       android:layout_width="100dip"    
+	           android:layout_height="100dip" 
+	           android:layout_centerVertical="true"
+	           android:layout_centerHorizontal="true"/> 
+	        <Button 
+				android:id="@+id/app_selectImage_btn" 
+				android:layout_width="35dip" 
+				android:layout_height="wrap_content" 
+				android:layout_centerVertical="true"
+				android:text="选图" 
+				android:layout_toRightOf="@id/app_image_btn"
+				android:background="@drawable/module_back"/>
+	        <Button 
+				android:id="@+id/app_uploadImage_btn" 
+				android:layout_width="35dip" 
+				android:layout_height="wrap_content" 
+				android:layout_centerVertical="true"
+				android:text="上传" 
+				android:layout_toRightOf="@id/app_selectImage_btn"
+				android:background="@drawable/module_back"/>
+	   </RelativeLayout> 
+	</LinearLayout>
+	<LinearLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:orientation="vertical">
+	    
+	      <TextView
+		        android:id="@+id/uploadImageResult"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="" />	    
+	</LinearLayout>
 		
 		<LinearLayout 
 			android:layout_width="fill_parent" 

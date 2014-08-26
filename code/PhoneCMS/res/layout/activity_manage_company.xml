@@ -4,31 +4,37 @@
 	android:orientation="vertical" 
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent">
-	<include layout="@layout/main_top" />
-	<ScrollView 
-		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"
-	    android:scrollbars="vertical" 
-	    android:layout_weight="1"
-	    android:fillViewport="true">
-		<LinearLayout 
-			android:layout_width="fill_parent" 
-			android:layout_height="fill_parent" 
-			android:orientation="vertical">
-			
-			<ListView 
-				android:id="@+id/app_config_list_main" 
-				android:layout_width="fill_parent" 
-				android:layout_height="wrap_content" 
-				android:layout_marginLeft="10dip" 
-				android:layout_marginRight="10dip" 
-				android:background="@drawable/xml_list_config_bg"
-				android:descendantFocusability="blocksDescendants"
-				android:dividerHeight="1dip"
-				android:listSelector="@drawable/xml_list_bg"
-				android:divider="@drawable/filter_spider_line" />
-		</LinearLayout>
-	</ScrollView>
-	<include layout="@layout/main_tab" />
+	<include layout="@layout/main_top_company" />
+	<ImageView   
+       android:layout_width="fill_parent"  
+       android:layout_height="1dp"  
+       android:background="#969696"/> 
+
+	<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"	    
+		    android:layout_marginBottom="70dp">
+
+		<Button
+		    android:id="@+id/app_addImage_btn"
+		    android:layout_width="150dip"
+		    android:layout_height="30dip"
+		    android:layout_marginLeft="15dip"
+		    android:layout_alignParentBottom ="true"
+		    android:background="@drawable/module_back"
+		    android:text="增加图片" />
+
+        <Button
+            android:id="@+id/app_addDesc_btn"           
+            android:layout_width="150dip"
+            android:layout_height="30dip"
+            android:layout_marginLeft="175dip"
+            android:layout_alignParentBottom ="true"
+            android:background="@drawable/module_back"
+            android:text="增加说明" />
+	
+	</RelativeLayout>
+	
 </LinearLayout>
+<include layout="@layout/main_tab" />
 </merge>

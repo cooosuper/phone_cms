@@ -4,7 +4,7 @@
 	android:orientation="vertical" 
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent">
-	<include layout="@layout/main_top_1" />
+	<include layout="@layout/main_top_comment_edit" />
 	<ScrollView 
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
@@ -31,25 +31,15 @@
 					android:layout_marginTop="8dip" 
 					android:id="@+id/app_blog_text_customer_name" 
 					android:textStyle="bold" 
-					android:text="name"
+					android:text="userid"
 					android:layout_toRightOf="@+id/app_blog_image_face"/>
 				<TextView 
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content" 
 					android:id="@+id/app_blog_text_customer_info" 
-					android:text="info"
+					android:text="time"
 					android:layout_toRightOf="@+id/app_blog_image_face"
 					android:layout_below="@+id/app_blog_text_customer_name"/>
-				<Button 
-					android:layout_width="80dip" 
-					android:layout_height="32dip" 
-					android:background="@drawable/button_1"
-					android:id="@+id/app_blog_btn_addfans" 
-					android:text="加关注"
-					android:layout_alignParentRight="true" 
-					android:layout_alignParentBottom="true"
-					android:layout_marginRight="8dip" 
-					android:layout_marginBottom="5dip"/>
 			</RelativeLayout>
 			<LinearLayout 
 				android:orientation="vertical"
@@ -67,7 +57,8 @@
 					android:layout_gravity="center" 
 					android:background="#f6f6f6" 
 					android:padding="10dip" 
-					android:textSize="12dip"/>
+					android:textSize="12dip"
+					android:text="Comment contents"/>
 				<LinearLayout 
 					android:orientation="horizontal" 
 					android:layout_width="fill_parent"
@@ -109,7 +100,7 @@
 					android:layout_marginBottom="3dip"
 					android:id="@+id/app_blog_btn_comment" 
 					android:textSize="12dip"
-					android:text="写评论" />
+					android:text="回复" />
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>

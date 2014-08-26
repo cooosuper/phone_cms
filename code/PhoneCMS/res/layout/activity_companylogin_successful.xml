@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
-
 <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#404040"
     android:orientation="vertical"
     android:padding="10dip" >
-
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-
         <Button
             android:id="@+id/log_off"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dip"
+            android:layout_height="38dip"
             android:text="退出" />
-
-
     </RelativeLayout>
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -31,7 +25,6 @@
         android:text="登录成功！"
         android:textColor="#FFFFFF"
         android:textSize="10pt" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -40,14 +33,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/main_intro"
         android:textColor="#FFFFFF"
-        android:textSize="10pt" />
-    <WebView android:id="@+id/web_map" 
-        android:layout_height="fill_parent" 
-        android:layout_weight="1" 
-        android:layout_width="fill_parent" />
-    
-		<include layout="@layout/main_tab" />
-
+        android:textSize="10pt" />    
 </LinearLayout>
-
+<include layout="@layout/main_tab" />
 </merge>

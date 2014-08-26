@@ -2,6 +2,7 @@ package cn.phonecms.main;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,7 +28,8 @@ public class BaseActivity extends Activity {
 
    View popupWindow_view = getLayoutInflater().inflate(R.layout.pop, null, false);
    
-   popupWindow      = new PopupWindow(popupWindow_view, 200, 350, true);
+   popupWindow      = new PopupWindow(popupWindow_view, 200, 380, true);
+   popupWindow.setBackgroundDrawable(new BitmapDrawable());
    commentManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_comment);
    subcompanyManage = (Button) popupWindow_view.findViewById(R.id.pop_tab_subcompany);
    recruitManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_recruit);
@@ -36,7 +38,7 @@ public class BaseActivity extends Activity {
      @Override
      public void onClick(View v) {
 
-     forward(ManageComment.class);
+     forward(ManageCommentActivity.class);
      System.out.println("评论管理操作");
 
      popupWindow.dismiss();
@@ -47,7 +49,7 @@ public class BaseActivity extends Activity {
      @Override
      public void onClick(View v) {
 
-     forward(ManageSubCompany.class);
+     forward(ManageSubCompanyActivity.class);
      System.out.println("分店管理操作");
 
      popupWindow.dismiss();
@@ -58,7 +60,7 @@ public class BaseActivity extends Activity {
      @Override
      public void onClick(View v) {
 
-     forward(ManageRecruit.class);
+     forward(ManageRecruitActivity.class);
      System.out.println("招聘管理操作");
 
      popupWindow.dismiss();
@@ -70,7 +72,7 @@ public class BaseActivity extends Activity {
      @Override
      public void onClick(View v) {
        
-       forward(ManageSubCompany.class);
+       forward(ManageSubCompanyActivity.class);
        System.out.println("分店管理操作");
        popupWindow.dismiss();
      }
@@ -79,7 +81,7 @@ public class BaseActivity extends Activity {
    recruitManage.setOnClickListener(new OnClickListener() {
      @Override
      public void onClick(View v) {
-       forward(ManageRecruit.class);
+       forward(ManageRecruitActivity.class);
        System.out.println("招聘操作");
        popupWindow.dismiss();
      }
@@ -117,10 +119,10 @@ public class BaseActivity extends Activity {
         public void onClick(View v) {
           switch (v.getId()) {
             case R.id.main_tab_company:
-              forward(ManageCompany.class);
+              forward(ManageCompanyActivity.class);
               break;
             case R.id.main_tab_product:
-              forward(ManageProduct.class);
+              forward(ManageProductActivity.class);
               break;
             case R.id.main_tab_activity:
               forward(ManageActivity.class);

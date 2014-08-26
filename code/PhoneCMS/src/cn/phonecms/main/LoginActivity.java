@@ -22,15 +22,12 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.EditText;
 
-
-
 public class LoginActivity extends Activity 
 {
   private EditText loginUsername;
   private EditText loginPasswd;
   private Button   loginBtn;
-  private RequestQueue mQueue;
-  
+//  private RequestQueue mQueue;
   protected void onCreate(Bundle savedInstanceState) 
   {
     
@@ -96,17 +93,15 @@ public class LoginActivity extends Activity
     LoginActivity.this.startActivity(intent);
   }
   
-  private boolean checkEdit(){
-    if(loginUsername.getText().toString().trim().equals("")){
-      Toast.makeText(LoginActivity.this, "用户名不能为空 ", Toast.LENGTH_SHORT).show();
-    }else if(loginPasswd.getText().toString().trim().equals("")){
-      Toast.makeText(LoginActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
-    }   
-    else{
-      return true;
-    }
-    return false;
-  }
-
-  
+//  private boolean checkEdit(){
+//    if(loginUsername.getText().toString().trim().equals("")){
+//      Toast.makeText(LoginActivity.this, "用户名不能为空 ", Toast.LENGTH_SHORT).show();
+//    }else if(loginPasswd.getText().toString().trim().equals("")){
+//      Toast.makeText(LoginActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+//    }   
+//    else{
+//      return true;
+//    }
+//    return false;
+//  }
 }

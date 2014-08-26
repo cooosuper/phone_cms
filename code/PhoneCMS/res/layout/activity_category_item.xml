@@ -3,12 +3,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/white" >
-    
+   
     <LinearLayout 
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:paddingTop="10dp"  
-        >
+        android:paddingTop="10dp">
 	    <ImageView
 	        android:id="@+id/catergory_image"
 	        android:layout_width="wrap_content"
@@ -17,8 +16,7 @@
 	        android:layout_alignParentTop="true"
 	        android:layout_marginLeft="10dp"
 	        android:src="@drawable/catergory_mobile" />
-	    
-	    
+	     
 	    <LinearLayout
 	        android:id="@+id/relativeLayout"
 	        android:layout_width="wrap_content"
@@ -26,8 +24,7 @@
 	        android:layout_marginTop="5dp"
 	        android:layout_marginLeft="5dp"
 	        android:layout_toRightOf="@+id/catergory_image"
-	        android:orientation="vertical"
-	        >
+	        android:orientation="vertical">
 	
 	        <TextView
 	            android:id="@+id/catergoryitem_title"
@@ -37,13 +34,13 @@
 	            android:textColor="@color/black"
 	            android:textSize="20sp" />
 
-	    <TextView
-	        android:id="@+id/catergoryitem_content"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="手机通讯/运营商/手机配件"
-	        android:textColor="@color/black"
-	        android:textSize="12sp" />
+		    <TextView
+		        android:id="@+id/catergoryitem_content"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="手机通讯/运营商/手机配件"
+		        android:textColor="@color/black"
+		        android:textSize="12sp" />
 	 	</LinearLayout>
     </LinearLayout>
 </RelativeLayout>

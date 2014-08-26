@@ -21,8 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.phonecms.main.network.UploadUtil;
-import cn.phonecms.main.network.UploadUtil.OnUploadProcessListener;
+import cn.phonecms.network.UploadUtil;
+import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
 public class AddActivity extends Activity implements OnClickListener,OnUploadProcessListener{
   private static final String TAG = "uploadImage";
@@ -93,8 +93,8 @@ public class AddActivity extends Activity implements OnClickListener,OnUploadPro
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         
-        backBtn = (Button) this.findViewById(R.id.main_top_back);
-        addBtn = (Button) this.findViewById(R.id.main_top_add);
+        backBtn = (Button) this.findViewById(R.id.main_activity_top_back);
+        addBtn = (Button) this.findViewById(R.id.main_activity_top_add);
         appActivityName = (EditText) this.findViewById(R.id.app_activity_name);     
         appActivityStarttime = (EditText) this.findViewById(R.id.app_activity_start_time);
         appActivityendtime = (EditText) this.findViewById(R.id.app_activity_end_time);
