@@ -1,4 +1,4 @@
-package cn.phonecms.main;
+package cn.phonecms.main.manage.product;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,106 +21,87 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.phonecms.main.R;
+import cn.phonecms.main.SelectPicActivity;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
 import cn.phonecms.network.UploadUtil;
 import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
-public class ModifySpecificSubCompanyActivity extends Activity implements OnClickListener,OnUploadProcessListener
-{
+public class AddProductActivity extends Activity implements OnClickListener,OnUploadProcessListener{
   private static final String TAG = "uploadImage";
   
-  /*** 去上传文件  */
+  /*** 去上传文件*/
   protected static final int TO_UPLOAD_FILE = 1;  
-  /*** 上传文件响应  */
+  /*** 上传文件响应 */
   protected static final int UPLOAD_FILE_DONE = 2;  //
-  /*** 选择文件  */
+  /*** 选择文件*/
   public static final int TO_SELECT_PHOTO = 3;
-  /*** 上传初始化  */
+  /*** 上传初始化*/
   private static final int UPLOAD_INIT_PROCESS = 4;
-  /*** 上传中  */
+  /*** 上传中*/
   private static final int UPLOAD_IN_PROCESS = 5;
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
-  private Button selectButton,uploadButton,backBtn, modifyBtn,delProductBtn;
+  private Button selectButton,uploadButton,backBtn,addBtn;
   private ImageView imageView;
   private TextView uploadImageResult;
   private ProgressBar progressBar;
   private String picPath = null;
   private ProgressDialog progressDialog;
   
-  private String subcompanyContact, subcompanyAddress, subcompanyFax, subcompanyEmail;
-  private EditText appSubcompanyContact, appSubcompanyAddress, appSubcompanyFax, appSubcompanyEmail;
+  private String productName, productPrice, productDesc;
+  private EditText appProductName, appProductPrice, appProductdesc;
+  private int productImage;
   
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modify_specific_subcompany);
+        setContentView(R.layout.activity_add_product);
         initView();
-
+        
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-          Intent myIntent = new Intent();
-          myIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
-          startActivity(myIntent);
-          ModifySpecificSubCompanyActivity.this.finish();
+            Intent myIntent = new Intent();
+            myIntent = new Intent(AddProductActivity.this, ManageProductActivity.class);
+            startActivity(myIntent);
+            AddProductActivity.this.finish();
           }
         });
         
-        modifyBtn.setOnClickListener(new OnClickListener() { 
+        addBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-           Intent mineIntent = new Intent();         
-           mineIntent.putExtra("subcompanyContact", subcompanyContact);
-           mineIntent.putExtra("subcompanyAddress",subcompanyAddress);
-           mineIntent.putExtra("subcompanyFax",subcompanyFax);
-           mineIntent.putExtra("subcompanyEmail",subcompanyEmail);
-           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
-           startActivity(mineIntent);
-           ModifySpecificSubCompanyActivity.this.finish();
-           Toast.makeText(ModifySpecificSubCompanyActivity.this, "修改成功", 1).show();
-          }
-        });
-        
-        delProductBtn.setOnClickListener(new OnClickListener() { 
-          public void onClick(View v) {               
-           Intent intent = getIntent();
-           String subcompanyId = intent.getStringExtra("SubCompanyId");
-           Intent mineIntent = new Intent(); 
-           mineIntent.putExtra("subcompanyId", subcompanyId);
-           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
-           startActivity(mineIntent);
-           ModifySpecificSubCompanyActivity.this.finish();
-           Toast.makeText(ModifySpecificSubCompanyActivity.this, "删除成功", 1).show();
+            Intent myIntent = new Intent();
+            myIntent = new Intent(AddProductActivity.this, ManageProductActivity.class);
+            startActivity(myIntent);
+            AddProductActivity.this.finish();
+            Toast.makeText(AddProductActivity.this, "添加成功", 1).show();
           }
         });
     }
     
-    /**
-     * 初始化数据
-     */
+    /*** 初始化数据 */
   private void initView() {
         selectButton = (Button) this.findViewById(R.id.app_selectImage_btn);
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
-        modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
-        backBtn = (Button) this.findViewById(R.id.main_top_back);
-        delProductBtn = (Button) this.findViewById(R.id.main_top_minus);
-        
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
         progressDialog = new ProgressDialog(this);
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         
-        appSubcompanyContact = (EditText)findViewById(R.id.app_subcompany_contactNumber);
-        appSubcompanyAddress = (EditText)findViewById(R.id.app_subcompany_address);
-        appSubcompanyFax = (EditText)findViewById(R.id.app_subcompany_fax);
-        appSubcompanyEmail = (EditText)findViewById(R.id.app_subcompany_email);
+        backBtn = (Button) this.findViewById(R.id.main_product_top_back);
+        addBtn = (Button) this.findViewById(R.id.main_product_top_add);
+        appProductName = (EditText)findViewById(R.id.app_product_name);
+        appProductPrice = (EditText)findViewById(R.id.app_product_price);
+        appProductdesc = (EditText)findViewById(R.id.app_product_desc);
         
-        subcompanyContact = appSubcompanyContact.getText().toString();
-        subcompanyAddress = appSubcompanyAddress.getText().toString();
-        subcompanyFax =  appSubcompanyFax.getText().toString();
-        subcompanyEmail = appSubcompanyEmail.getText().toString();
-
+        productName = appProductName.getText().toString();
+        productPrice = appProductPrice.getText().toString();
+        productDesc =  appProductdesc.getText().toString();
+        productImage = imageView.getId();
   }
 
   @Override
@@ -155,10 +136,7 @@ public class ModifySpecificSubCompanyActivity extends Activity implements OnClic
     super.onActivityResult(requestCode, resultCode, data);
   }
   
-
-  /**
-   * 上传服务器响应回调
-   */
+  /*** 上传服务器响应回调 */
   @Override
   public void onUploadDone(int responseCode, String message) {
     progressDialog.dismiss();

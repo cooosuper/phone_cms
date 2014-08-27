@@ -1,5 +1,8 @@
-package cn.phonecms.main;
+package cn.phonecms.main.manage.recruit;
 
+import cn.phonecms.main.R;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

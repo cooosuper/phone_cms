@@ -1,5 +1,10 @@
-package cn.phonecms.main;
+package cn.phonecms.main.manage.company;
 
+import cn.phonecms.main.BaseActivity;
+import cn.phonecms.main.CompanyLoginSuccessActivity;
+import cn.phonecms.main.R;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

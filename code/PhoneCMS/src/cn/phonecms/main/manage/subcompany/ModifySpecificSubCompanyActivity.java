@@ -1,4 +1,4 @@
-package cn.phonecms.main;
+package cn.phonecms.main.manage.subcompany;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,10 +21,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.phonecms.main.R;
+import cn.phonecms.main.SelectPicActivity;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
 import cn.phonecms.network.UploadUtil;
 import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
-public class AddSubCompanyActivity extends Activity implements OnClickListener,OnUploadProcessListener
+public class ModifySpecificSubCompanyActivity extends Activity implements OnClickListener,OnUploadProcessListener
 {
   private static final String TAG = "uploadImage";
   
@@ -40,8 +44,7 @@ public class AddSubCompanyActivity extends Activity implements OnClickListener,O
   private static final int UPLOAD_IN_PROCESS = 5;
 
   private static String requestURL = "http://***.***.***.***:8080/***/***";
-  private Button selectButton,uploadButton,backBtn,addBtn;
-  
+  private Button selectButton,uploadButton,backBtn, modifyBtn,delProductBtn;
   private ImageView imageView;
   private TextView uploadImageResult;
   private ProgressBar progressBar;
@@ -55,29 +58,42 @@ public class AddSubCompanyActivity extends Activity implements OnClickListener,O
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_subcompany);
+        setContentView(R.layout.activity_modify_specific_subcompany);
         initView();
 
         backBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
           Intent myIntent = new Intent();
-          myIntent = new Intent(AddSubCompanyActivity.this, ManageSubCompanyActivity.class);
+          myIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
           startActivity(myIntent);
-          AddSubCompanyActivity.this.finish();
+          ModifySpecificSubCompanyActivity.this.finish();
           }
         });
         
-        addBtn.setOnClickListener(new OnClickListener(){
+        modifyBtn.setOnClickListener(new OnClickListener() { 
           public void onClick(View v) { 
-            Intent mineIntent = new Intent();         
-            mineIntent.putExtra("subcompanyContact", subcompanyContact);
-            mineIntent.putExtra("subcompanyAddress",subcompanyAddress);
-            mineIntent.putExtra("subcompanyFax",subcompanyFax);
-            mineIntent.putExtra("subcompanyEmail",subcompanyEmail);
-            mineIntent = new Intent(AddSubCompanyActivity.this, ManageSubCompanyActivity.class);
-            startActivity(mineIntent);
-            AddSubCompanyActivity.this.finish();
-            Toast.makeText(AddSubCompanyActivity.this, "添加成功", 1).show();
+           Intent mineIntent = new Intent();         
+           mineIntent.putExtra("subcompanyContact", subcompanyContact);
+           mineIntent.putExtra("subcompanyAddress",subcompanyAddress);
+           mineIntent.putExtra("subcompanyFax",subcompanyFax);
+           mineIntent.putExtra("subcompanyEmail",subcompanyEmail);
+           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
+           startActivity(mineIntent);
+           ModifySpecificSubCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificSubCompanyActivity.this, "修改成功", 1).show();
+          }
+        });
+        
+        delProductBtn.setOnClickListener(new OnClickListener() { 
+          public void onClick(View v) {               
+           Intent intent = getIntent();
+           String subcompanyId = intent.getStringExtra("SubCompanyId");
+           Intent mineIntent = new Intent(); 
+           mineIntent.putExtra("subcompanyId", subcompanyId);
+           mineIntent = new Intent(ModifySpecificSubCompanyActivity.this, ManageSubCompanyActivity.class);
+           startActivity(mineIntent);
+           ModifySpecificSubCompanyActivity.this.finish();
+           Toast.makeText(ModifySpecificSubCompanyActivity.this, "删除成功", 1).show();
           }
         });
     }
@@ -90,8 +106,9 @@ public class AddSubCompanyActivity extends Activity implements OnClickListener,O
         uploadButton = (Button) this.findViewById(R.id.app_uploadImage_btn);
         selectButton.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
-        addBtn = (Button) this.findViewById(R.id.main_subcompany_top_add);
-        backBtn = (Button) this.findViewById(R.id.main_subcompany_top_back);
+        modifyBtn = (Button) this.findViewById(R.id.main_top_modify);
+        backBtn = (Button) this.findViewById(R.id.main_top_back);
+        delProductBtn = (Button) this.findViewById(R.id.main_top_minus);
         
         imageView = (ImageView) this.findViewById(R.id.app_image_btn);
         uploadImageResult = (TextView) findViewById(R.id.uploadImageResult);
@@ -142,6 +159,7 @@ public class AddSubCompanyActivity extends Activity implements OnClickListener,O
     super.onActivityResult(requestCode, resultCode, data);
   }
   
+
   /**
    * 上传服务器响应回调
    */

@@ -1,4 +1,4 @@
-package cn.phonecms.main;
+package cn.phonecms.main.manage.activity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +21,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.phonecms.main.R;
+import cn.phonecms.main.SelectPicActivity;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
 import cn.phonecms.network.UploadUtil;
 import cn.phonecms.network.UploadUtil.OnUploadProcessListener;
 
