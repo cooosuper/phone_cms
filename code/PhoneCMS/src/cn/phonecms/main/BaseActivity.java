@@ -1,5 +1,12 @@
 package cn.phonecms.main;
 
+import cn.phonecms.main.manage.activity.ManageActivity;
+import cn.phonecms.main.manage.comment.ManageCommentActivity;
+import cn.phonecms.main.manage.company.ManageCompanyActivity;
+import cn.phonecms.main.manage.feedback.ManageFeedbackActivity;
+import cn.phonecms.main.manage.product.ManageProductActivity;
+import cn.phonecms.main.manage.recruit.ManageRecruitActivity;
+import cn.phonecms.main.manage.subcompany.ManageSubCompanyActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;

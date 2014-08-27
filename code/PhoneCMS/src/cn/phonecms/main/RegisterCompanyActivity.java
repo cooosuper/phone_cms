@@ -17,6 +17,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import cn.phonecms.main.R;
+import cn.phonecms.main.R.id;
+import cn.phonecms.main.R.layout;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
