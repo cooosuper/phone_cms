@@ -21,7 +21,7 @@ public class ModifySpecificCommentActivity extends BaseActivity{
   @Override
   public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_view_specific_comment);
+      setContentView(R.layout.activity_modify_specific_comment);
       initView();
       
       Intent intent = getIntent();

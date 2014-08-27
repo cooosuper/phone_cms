@@ -19,4 +19,9 @@
 		android:layout_height="wrap_content"
 		android:background="@drawable/module_back"
 		android:text="招聘管理"/>
+		<Button android:id="@+id/pop_tab_feedback"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/module_back"
+		android:text="意见反馈管理"/>
 </LinearLayout>

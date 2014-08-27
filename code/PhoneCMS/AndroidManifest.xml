@@ -154,6 +154,19 @@
             android:name="cn.phonecms.main.ModifySpecificRecruitActivity"
             android:label="@string/app_name" >
         </activity>
+        <!-- Feedback Related Activities-->
+        <activity
+            android:name="cn.phonecms.main.ManageFeedbackActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cn.phonecms.main.ModifySpecificFeedbackActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="cn.phonecms.main.AddFeedbackActivity"
+            android:label="@string/app_name" >
+        </activity>
          
     </application>
 

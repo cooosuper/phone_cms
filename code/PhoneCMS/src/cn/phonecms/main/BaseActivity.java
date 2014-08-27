@@ -16,7 +16,7 @@ import android.view.Gravity;
 
 public class BaseActivity extends Activity {
   
-  private Button bTabCompany,bTabProduct,bTabActivity,bTabMore,commentManage,subcompanyManage,recruitManage;
+  private Button bTabCompany,bTabProduct,bTabActivity,bTabMore,commentManage,subcompanyManage,recruitManage, feedbackManage;
   private PopupWindow popupWindow;
   
   
@@ -28,12 +28,25 @@ public class BaseActivity extends Activity {
 
    View popupWindow_view = getLayoutInflater().inflate(R.layout.pop, null, false);
    
-   popupWindow      = new PopupWindow(popupWindow_view, 200, 380, true);
+   popupWindow      = new PopupWindow(popupWindow_view, 250, 500, true);
    popupWindow.setBackgroundDrawable(new BitmapDrawable());
    commentManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_comment);
    subcompanyManage = (Button) popupWindow_view.findViewById(R.id.pop_tab_subcompany);
    recruitManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_recruit);
+   feedbackManage   = (Button) popupWindow_view.findViewById(R.id.pop_tab_feedback);
 
+   feedbackManage.setOnClickListener(new OnClickListener() {
+     @Override
+     public void onClick(View v) {
+
+     forward(ManageFeedbackActivity.class);
+     System.out.println("意见反馈管理操作");
+
+     popupWindow.dismiss();
+     }
+   });
+   
+   
    commentManage.setOnClickListener(new OnClickListener() {
      @Override
      public void onClick(View v) {
