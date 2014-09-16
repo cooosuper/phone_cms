@@ -14,14 +14,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ManageActivity extends BaseActivity{
 
   private Button backBtn, addActivityBtn;
-  private ListView catergory_listview;
+  private GridView gridview;
   
 //适配显示的图片数组
   private String[] mImageIds = {"http://imgstatic.baidu.com/img/image/shouye/fanbingbing.jpg","http://imgstatic.baidu.com/img/image/shouye/liuyifei.jpg","http://imgstatic.baidu.com/img/image/shouye/wanglihong.jpg","http://imgstatic.baidu.com/img/image/shouye/gaoyuanyuan.jpg",
@@ -31,8 +31,8 @@ public class ManageActivity extends BaseActivity{
   private String[] mTitleValues = { "家电活动", "图书活动", "衣服活动", "笔记本活动", "数码活动",
       "家具活动", "手机活动", "护肤活动" };
   
-  private String[] mContentValues={"家电/生活电器/厨房电器", "电子书/图书/小说","男装/女装/童装", "笔记本/笔记本配件/产品外设", "摄影摄像/数码配件", 
-      "家具/灯具/生活用品", "手机通讯/运营商/手机配件", "面部护理/口腔护理/..."};
+  private String[] mContentValues={"家电/生活电器", "电子书/图书","男装/女装", "笔记本/笔记本配件", "摄影摄像/数码配件", 
+      "家具/灯具", "手机通讯/运营商", "面部护理/口腔护理/..."};
   
   
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +42,9 @@ public class ManageActivity extends BaseActivity{
    
     backBtn = (Button)findViewById(R.id.main_top_back);
     addActivityBtn = (Button)findViewById(R.id.main_top_plus);
-    catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);
-    catergory_listview.setAdapter(new CategoryAdapter(this, mImageIds, mTitleValues, mContentValues));
-    catergory_listview.setOnItemClickListener(new OnItemClickListener() {
+    gridview=(GridView)this.findViewById(R.id.app_config_list_main);
+    gridview.setAdapter(new CategoryAdapter(this, mImageIds, mTitleValues, mContentValues));
+    gridview.setOnItemClickListener(new OnItemClickListener() {
 
       @Override
       public void onItemClick(AdapterView<?> adapterview, View view, int parent,

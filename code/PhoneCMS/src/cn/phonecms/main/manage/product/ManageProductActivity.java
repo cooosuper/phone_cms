@@ -31,8 +31,8 @@ public class ManageProductActivity extends BaseActivity{
   private String[] mTitleValues = { "家电产品", "图书产品", "衣服产品", "笔记本产品", "数码产品",
       "家具产品", "手机产品", "护肤产品" };
   
-  private String[] mContentValues={"家电/生活电器/厨房电器", "电子书/图书/小说","男装/女装/童装", "笔记本/笔记本配件/产品外设", "摄影摄像/数码配件", 
-      "家具/灯具/生活用品", "手机通讯/运营商/手机配件", "面部护理/口腔护理/..."};
+  private String[] mContentValues={"家电/生活电器", "电子书/图书","男装/女装", "笔记本/笔记本配件", "摄影摄像/数码配件", 
+      "家具/灯具", "手机通讯/运营商", "面部护理/口腔护理/..."};
   
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -41,7 +41,7 @@ public class ManageProductActivity extends BaseActivity{
    
     backBtn = (Button)findViewById(R.id.main_top_back);
     addProductBtn = (Button)findViewById(R.id.main_top_plus);
-    catergory_listview=(ListView)this.findViewById(R.id.app_config_list_main);
+    catergory_listview = (ListView) findViewById(R.id.app_config_list_main);  
     catergory_listview.setAdapter(new CategoryAdapter(this, mImageIds, mTitleValues, mContentValues));
     catergory_listview.setOnItemClickListener(new OnItemClickListener() {
 
