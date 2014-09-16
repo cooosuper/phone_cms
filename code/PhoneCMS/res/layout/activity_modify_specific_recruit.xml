@@ -12,14 +12,14 @@
 	<Button 
 		android:id="@+id/main_top_minus" 
 		android:layout_width="34dip" 
-		android:layout_height="33dip" 
+		android:layout_height="38dip" 
 		android:layout_alignParentRight="true" 
 		android:background="@drawable/module_back"
 		android:text="X"  />
 	<Button 
 		android:id="@+id/main_top_modify" 
 		android:layout_width="44dip" 
-		android:layout_height="33dip" 
+		android:layout_height="38dip" 
 		android:layout_toLeftOf="@id/main_top_minus"
 		android:background="@drawable/module_back"
 		android:text="确定"  />
@@ -27,7 +27,7 @@
 	<Button
 	    android:id="@+id/main_top_back"
 	    android:layout_width="60dip"
-	    android:layout_height="33dip"
+	    android:layout_height="38dip"
 	    android:layout_alignParentLeft="true"
 	    android:text="后退" />
 

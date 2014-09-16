@@ -21,4 +21,12 @@
 		android:gravity="center" 
 		android:text="公司管理" 
 		android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	<Button
+	    android:id="@+id/main_top_confirm"
+	    android:layout_width="60dip"
+	    android:layout_height="39dip"
+	    android:layout_centerVertical="true"
+	    android:layout_alignParentRight="true"
+	    android:text="确定" />
 </RelativeLayout>

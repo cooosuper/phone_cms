@@ -112,9 +112,9 @@
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="40dip" 
+					android:layout_centerVertical = "true"
 					android:id="@+id/app_subcompany_contactNumber" 
-					android:layout_gravity="center_horizontal"
-					android:layout_marginLeft="160dip"/>
+					android:layout_marginLeft="140dip"/>
 
 				<TextView
 				    android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
 				    android:layout_alignBaseline="@+id/app_subcompany_contactNumber"
 				    android:layout_alignBottom="@+id/app_subcompany_contactNumber"
 				    android:layout_alignParentLeft="true"
-				    android:layout_gravity="center_horizontal"
+				    android:layout_centerVertical = "true"
 				    android:layout_marginLeft="27dp"
 				    android:text="联系电话"
 				    android:textAppearance="?android:attr/textAppearanceLarge"
@@ -135,9 +135,9 @@
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="40dip" 
+					android:layout_centerVertical = "true"
 					android:id="@+id/app_subcompany_address" 
-					android:layout_gravity="center_horizontal"
-					android:layout_marginLeft="160dip"/>
+					android:layout_marginLeft="140dip"/>
 
 				<TextView
 				    android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
 				    android:layout_alignBaseline="@+id/app_subcompany_address"
 				    android:layout_alignBottom="@+id/app_subcompany_address"
 				    android:layout_alignParentLeft="true"
-				    android:layout_gravity="center_horizontal"
+				    android:layout_centerVertical = "true"
 				    android:layout_marginLeft="27dp"
 				    android:text="联系地址"
 				    android:textAppearance="?android:attr/textAppearanceLarge"
@@ -160,6 +160,7 @@
 					android:layout_width="wrap_content" 
 					android:textAppearance="?android:attr/textAppearanceLarge" 
 					android:layout_height="wrap_content" 
+					android:layout_centerVertical = "true"
 					android:layout_marginLeft="27dp"
 					android:text="传真号码" 
 					android:textSize="7pt" 
@@ -168,8 +169,9 @@
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="40dip" 
+					android:layout_centerVertical = "true"
 					android:id="@+id/app_subcompany_fax" 
-					android:layout_marginLeft="160dip"/>
+					android:layout_marginLeft="140dip"/>
 					
 			</RelativeLayout>	
 			<RelativeLayout
@@ -181,6 +183,7 @@
 					android:textAppearance="?android:attr/textAppearanceLarge" 
 					android:layout_height="wrap_content" 
 					android:layout_marginLeft="27dp"
+					android:layout_centerVertical = "true"
 					android:text="邮箱地址" 
 					android:textSize="7pt" 
 					android:layout_marginTop="5dip"/>
@@ -188,8 +191,9 @@
 					android:layout_weight="1" 
 					android:layout_width="150dip" 
 					android:layout_height="40dip" 
+					android:layout_centerVertical = "true"
 					android:id="@+id/app_subcompany_email" 
-					android:layout_marginLeft="160dip"/>
+					android:layout_marginLeft="140dip"/>
 					
 			</RelativeLayout>
 			

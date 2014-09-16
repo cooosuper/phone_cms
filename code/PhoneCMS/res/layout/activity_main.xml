@@ -7,41 +7,41 @@
     android:background="@drawable/bg_gray"
     android:orientation="vertical"
     android:padding="30dip" >
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/main_intro"
-        android:textColor="#FFFFFF"
-        android:textSize="9pt"
-        android:textStyle="bold" />
-
+ 	<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="70dp"
+	        android:layout_centerHorizontal = "true"
+	        android:text="@string/main_intro"
+	        android:textColor="#FFFFFF"
+	        android:textSize="9pt"
+	        android:textStyle="bold" />
+	</RelativeLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="290dip" >
 
         <Button
-            android:id="@+id/app_login_btn_navigate"
-            android:layout_width="100dip"
-            android:layout_height="40dip"
-            android:layout_marginLeft="160dip"
-            android:background="#00FF00"
-            android:text="登录" />
-
-        <Button
             android:id="@+id/app_register_btn_submit"
             android:layout_width="100dip"
             android:layout_height="40dip"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="34dp"
             android:background="#FF0000"
             android:text="注册"
             android:textColor="#FFFFFF" />
+        
+        <Button
+            android:id="@+id/app_login_btn_navigate"
+            android:layout_width="100dip"
+            android:layout_height="40dip"
+			android:layout_alignParentRight = "true"
+            android:background="#00FF00"
+            android:text="登录" />
     </RelativeLayout>
 </LinearLayout>
 
