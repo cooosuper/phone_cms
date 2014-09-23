@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.view.Gravity;
@@ -35,7 +36,7 @@ public class BaseActivity extends Activity {
 
    View popupWindow_view = getLayoutInflater().inflate(R.layout.pop, null, false);
    
-   popupWindow      = new PopupWindow(popupWindow_view, 250, 500, true);
+   popupWindow      = new PopupWindow(popupWindow_view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
    popupWindow.setBackgroundDrawable(new BitmapDrawable());
    commentManage    = (Button) popupWindow_view.findViewById(R.id.pop_tab_comment);
    subcompanyManage = (Button) popupWindow_view.findViewById(R.id.pop_tab_subcompany);
